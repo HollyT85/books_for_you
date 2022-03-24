@@ -11,8 +11,6 @@
         integrity="sha512-M9yHeAbo9J8KSZVvOi5PEo4WrL6LWxbS+cvh6faIEPPqHQXhxilgCSJ/L2tTqRf73GmI4+tNy8OWSsQuwXc4fw==" crossorigin="anonymous" type="text/css" referrerpolicy="no-referrer" />
     <!--Stylesheet-->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
-    {% block styles %}
-    {% endblock %}
     <title>Next Book, Please</title>
 </head>
 <body>
@@ -25,12 +23,11 @@
             </form>
         </div>
     </nav>
+    
 {% block body %}
 {% endblock %}
 
 <!--JS-->
 <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-{% block script %}
-{% endblock %}
 </body>
 </html>
