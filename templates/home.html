@@ -1,6 +1,20 @@
 {% extends "base.html" %}
 {% block body %}
-<div class="container hero">
+<div class="container ">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Where will your next book take you?</h5>
+                    <p class="card-text">Book reviews you can trust</p>
+                    <a href="#" class="btn btn-dark">Login</a>
+                    <a href="#" class="btn btn-dark">Register</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <img src="{{ url_for('static', filename='images/book.jpg') }}" alt="">
 </div>
+
+
 {% endblock %}
