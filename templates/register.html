@@ -6,7 +6,7 @@
         <div class="card-header">
             Register
         <div class="card-body">
-            <form>
+            <form method="POST" action="{{ url_for('register') }}">
                 <label for="email" class="form-label">Email address</label>
                 <input type="email" class="form-control" id="email">
                 <label for="username" class="form-label">Username</label>
@@ -14,8 +14,8 @@
                 <label for="password" class="form-label">Password</label>
                 <input type="email" class="form-control" id="password">
             </form>
-            <a href="#" class="btn btn-dark">Register</a>
-            <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+            <button type="submit" class="btn btn-dark form-button">Register</button>
+            <p>Already have an account? <a class="link" href="{{ url_for('login') }}">Login</a></p>
         </div>
         </div>
     </div>

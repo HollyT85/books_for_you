@@ -18,8 +18,9 @@
     background-color: rgba(192, 192, 192, 0.8);
 }
 
-.btn {
+.form-button {
     margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .btn:hover {
@@ -35,4 +36,9 @@
     margin-left: auto;
     background-color: yellow;
     text-align: center;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
 }
