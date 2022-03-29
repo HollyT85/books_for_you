@@ -42,3 +42,8 @@
     text-decoration: none;
     color: black;
 }
+
+.messages {
+    color: white;
+    text-align: center;
+}

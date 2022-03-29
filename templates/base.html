@@ -12,8 +12,6 @@
     <!--Stylesheet-->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <title>Next Book, Please</title>
-</head>
-<body>
     <nav class="navbar navbar-light bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand text-white" href="{{ url_for('home_page') }}">Next Book, Please</a>
@@ -23,9 +21,25 @@
             </form>
         </div>
     </nav>
+</head>
+<body>
     <img class="background" src="{{ url_for('static', filename='images/book.jpg') }}" alt="book with a torch light shining on it">
-{% block body %}
-{% endblock %}
+    <div>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="row">
+                        <p class="messages"> {{ message }}</p>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+    <div class="container-fluid">
+        {% block body %}
+        {% endblock %}
+    </div>
+
 
 <!--JS-->
 <script src="{{ url_for('static', filename='js/script.js') }}"></script>
