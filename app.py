@@ -26,27 +26,28 @@ mongo = PyMongo(app)
 # home page function
 @app.route("/")
 def home_page():
-    # return user to home page
+    """return user to home page"""
     return render_template("home.html")
 
 
 # register function
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    # allow a new user to register and save into DB
+    """allow a new user to register and save into DB"""
     return render_template("register.html")
 
 
 # log in function
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    # check if username exists
+    """check if username exists"""
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
     if existing_user:
-        # check password matches with username
+        # check password matches with username and display an error
+        # if it doesn't
         if check_password_hash(
                 existing_user["password"], request.form.get("password")):
             session["user"] = request.form.get("username").lower()
