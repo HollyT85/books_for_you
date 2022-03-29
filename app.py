@@ -33,25 +33,25 @@ def home_page():
 # register function
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    """allow a new user to register and save into DB"""
+    """ action to take if method is post """
     if request.method == "POST":
-        existing_username = mongo.db.find_one(
-            {"username": request.form.get("username").lower})
+        # Check if username exists in DB
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
 
-        if existing_username():
-            flash("Username taken")
+        if existing_user:
+            flash("Username already exists")
             return redirect(url_for("register"))
 
-        register = {
+        registration = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))
         }
-        mongo.db.users.insert_one(register)
+        mongo.db.users.insert_one(registration)
 
-        session['user'] = request.form.get("username").lower()
-        flash("Account succesfully created")
-        return redirect(url_for("userprofile", username=session["user"]))
-
+        # put the new user into 'session' cookie
+        session["user"] = request.form.get("username").lower()
+        flash("Registration Successful!")
     return render_template("register.html")
 
 
@@ -68,7 +68,7 @@ def login():
             # if it doesn't
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
-                session["user"] = request.form.get("username").lower()
+                session["user"] = request.form.get("username")
                 flash("Welcome, {}".format(
                     request.form.get("username")))
 
