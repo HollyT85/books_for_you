@@ -34,6 +34,14 @@ def home_page():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """allow a new user to register and save into DB"""
+    if request.method == "POST":
+        existing_username = mongo.db.find_one(
+            {"username": request.form.get("username").lower})
+
+    if existing_username():
+        flash("Username taken")
+        return redirect(url_for("register"))
+
     return render_template("register.html")
 
 
