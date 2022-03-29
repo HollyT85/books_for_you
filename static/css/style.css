@@ -18,6 +18,10 @@
     background-color: rgba(192, 192, 192, 0.8);
 }
 
+.btn {
+    margin-top: 1rem;
+}
+
 .btn:hover {
     color:red;
 }
