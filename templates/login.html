@@ -1,4 +1,22 @@
 {% extends "base.html" %}
 {% block body %}
 
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header">
+            Login
+        <div class="card-body">
+            <form>
+                <label for="username" class="form-label">Username</label>
+                <input type="email" class="form-control" id="username">
+                <label for="password" class="form-label">Password</label>
+                <input type="email" class="form-control" id="password">
+            </form>
+            <a href="#" class="btn btn-dark">Login</a>
+            <p>Don't have an account? <a href="{{ url_for('register') }}">Register</a></p>
+        </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
