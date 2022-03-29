@@ -28,6 +28,18 @@ def home_page():
     return render_template("home.html")
 
 
+# log in function
+@app.route("/login", methods={"GET", "POST"})
+def login():
+    return render_template("login.html")
+
+
+# register function
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    return render_template("register.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
