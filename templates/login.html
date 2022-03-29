@@ -6,13 +6,19 @@
         <div class="card-header">
             Login
         <div class="card-body">
-            <form method="POST" action="{{ url_for('login') }}">
-                <label for="username" class="form-label">Username</label>
-                <input type="email" class="form-control" id="username">
-                <label for="password" class="form-label">Password</label>
-                <input type="email" class="form-control" id="password">
+            <<form method="POST" action="{{ url_for('login') }}">
+                <div class="row">
+                    <label for="username" class="form-label">Username </label>
+                    <input type="text" name="username" class="form-control" id="username" placeholder="Enter a username" required>
+                </div>
+                <div class="row">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" name="password" class="form-control" id="password" placeholder="Enter Password" required>
+                </div>
+                <div class="row">
+                    <button type="submit" class="btn btn-dark form-button">Register</button>
+                </div>
             </form>
-            <button type="submit" class="btn btn-dark form-button">Login</button>
             <p>Don't have an account? <a class="link" href="{{ url_for('register') }}">Register</a></p>
         </div>
         </div>
