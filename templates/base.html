@@ -16,14 +16,14 @@
 <body>
     <nav class="navbar navbar-light bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand text-white">Next Book, Please</a>
+            <a class="navbar-brand text-white" href="{{ url_for('home_page') }}">Next Book, Please</a>
             <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-dark" type="submit">Search</button>
             </form>
         </div>
     </nav>
-    
+    <img class="background" src="{{ url_for('static', filename='images/book.jpg') }}" alt="book with a torch light shining on it">
 {% block body %}
 {% endblock %}
 

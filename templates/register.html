@@ -1,4 +1,26 @@
 {% extends "base.html" %}
 {% block body %}
 
+<h2 class="center">Register</h2><br>
+
+<div class="container">
+    <div class="row">
+        <form class="card">
+            <div class="col-sm-6">
+                <label for="inputEmail" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="inputEmail">
+            </div>
+            <div class="col-sm-6">
+                <label for="username" class="form-label">Username</label>
+                <input type="email" class="form-control" id="username">
+            </div>
+            <div class="col-sm-6">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password">
+            </div>
+            <button type="submit" class="btn btn-dark">Submit</button>
+        </form>
+    </div>
+</div>
+
 {% endblock %}
