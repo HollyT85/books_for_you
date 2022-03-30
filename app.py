@@ -93,7 +93,7 @@ def userprofile(username):
     # get users username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    return render_template("userprofile.html", username = username)
+    return render_template("userprofile.html", username=username)
 
 
 if __name__ == "__main__":
