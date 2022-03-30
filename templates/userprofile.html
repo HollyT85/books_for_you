@@ -10,11 +10,11 @@
             <img class="prof-pic" src="{{ url_for('static', filename='images/profpic.png') }}">
             <ul class="user-info">
                 <li><b>Username:</b> {{ username }}</li>
-                <li><b>Favourite Author:</b></li>
+                <li><b>Reviews Left:</b></li>
                 <li><b>Favourite Book:</b></li>
             </ul>
-        <button class="btn btn-dark" type="submit">Edit Profile</button>
-        <button class="btn btn-dark" type="submit">Delete Profile</button>
+        <button class="btn btn-dark" type="submit">Add a Review</button>
+        <button class="btn btn-dark" type="submit">Edit a Review</button>
         <a href="{{ url_for('logout') }}" class="btn btn-dark">Logout</a>
         </div>
     </div>
