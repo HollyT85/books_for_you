@@ -55,7 +55,7 @@
     width: 50vw;
     border-left: auto;
     border-right: auto;
-    background-color: yellow; 
+    background-color: rgba(192, 192, 192, 0.8); 
     margin:auto;
     margin-top: 2rem;
     padding: 1rem;

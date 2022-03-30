@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 {% block body %}
 
-
-
 <div class="container-fluid">
     <div class="background-color">
         <div class="card-header">
@@ -11,12 +9,13 @@
         <div class="card-body">
             <img class="prof-pic" src="{{ url_for('static', filename='images/profpic.png') }}">
             <ul class="user-info">
-                <li><b>Name:</b></li>
                 <li><b>Username:</b> {{ username }}</li>
                 <li><b>Favourite Author:</b></li>
                 <li><b>Favourite Book:</b></li>
             </ul>
-
+        <button class="btn btn-dark" type="submit">Edit Profile</button>
+        <button class="btn btn-dark" type="submit">Delete Profile</button>
+        <a href="{{ url_for('logout') }}" class="btn btn-dark">Logout</a>
         </div>
     </div>
 </div>
