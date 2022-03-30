@@ -74,3 +74,12 @@
     float: left;
     margin-right: 2rem;
 }
+
+/*review page*/
+
+.book-pic {
+    float:right;
+    width: 12rem;
+    height: 12rem;
+    padding: 1rem;
+}

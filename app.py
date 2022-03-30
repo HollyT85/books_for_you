@@ -108,6 +108,11 @@ def logout():
     return redirect(url_for("home_page"))
 
 
+@app.route("/addreview")
+def addreview():
+    return render_template("addreview.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
