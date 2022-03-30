@@ -49,3 +49,21 @@
     text-align: center;
     padding: 1rem;
 }
+.titles {
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.background-color {
+    position: absolute;
+    width: 95vw;
+    height: 95vh;
+    border-left: auto;
+    border-right: auto;
+    background-color: yellow;
+}
+
+.outline {
+    border: 2px black solid;
+}
