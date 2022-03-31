@@ -12,7 +12,7 @@
                     <!--<div>
                 <img class="book-pic" src="{{ url_for('static', filename='images/blank.jpg') }}">
                 </div>-->
-                    <form>
+                    <form method="POST" action="{{ url_for('addreview') }}">
                         <div class="row">
                             <label for="title" class="form-label"><b>Title:</b></label><br>
                             <input type="text" name="title" class="form-control" id="title" placeholder="Enter title"
@@ -36,15 +36,16 @@
                         </div>
                         <div class="row">
                             <label for="rating" class="form-label"><b>Rating:</b></label><br>
-                            <input type="text" pattern="(?=.*[a-z])" name="rating" class="form-control" id="rating"
+                            <input type="text" name="rating" class="form-control" id="rating"
                                 placeholder="Enter rating out of 5" required><br>
                         </div>
-                    </form>
-                    <div class="row">
-                        <div class="col">
-                            <button class="btn btn-dark" type="submit">Submit</button>
+                        <div class="row">
+                            <div class="col">
+                                <button class="btn btn-dark" type="submit">Add Review</button>
+                            </div>
                         </div>
-                    </div>
+                    </form>
+                    
                 </div>
             </div>
         </div>
