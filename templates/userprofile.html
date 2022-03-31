@@ -12,6 +12,7 @@
                 <p class="user-info"><b>Username:</b> {{ username }}</p>
             </div>
             <div class="row">
+                <a href="{{ url_for('addbook') }}" class="btn btn-dark" type="submit">Add a Book</a>
                 <a href="{{ url_for('addreview') }}" class="btn btn-dark" type="submit">Add a Review</a>
                 <button class="btn btn-dark" type="submit">Edit a Review</button>
                 <a href="{{ url_for('logout') }}" class="btn btn-dark">Logout</a>
