@@ -2,20 +2,24 @@
 {% block body %}
 
 <div class="container-fluid">
-    <div class="background-color">
-        <div class="card-header">
-            <p class="titles"><b>{{ username }}'s Profile</b></h1>
-        </div>
-        <div class="card-body">
-            <img class="prof-pic" src="{{ url_for('static', filename='images/profpic.png') }}">
-            <ul class="user-info">
-                <li><b>Username:</b> {{ username }}</li>
-                <li><b>Reviews Left:</b></li>
-                <li><b>Favourite Book:</b></li>
-            </ul>
-        <a href="{{ url_for('addreview') }}" class="btn btn-dark" type="submit">Add a Review</a>
-        <button class="btn btn-dark" type="submit">Edit a Review</button>
-        <a href="{{ url_for('logout') }}" class="btn btn-dark">Logout</a>
+    <div class="card">
+        <div class="col-sm-6">
+            <div class="background-color">
+                <div class="card-header">
+                    <p class="titles"><b>{{ username }}'s Profile</b></h1>
+                </div>
+                <div class="card-body">
+                    <img class="prof-pic" src="{{ url_for('static', filename='images/profpic.png') }}">
+                    <ul class="user-info">
+                        <li><b>Username:</b> {{ username }}</li>
+                        <li><b>Reviews Left:</b></li>
+                        <li><b>Favourite Book:</b></li>
+                    </ul>
+                    <a href="{{ url_for('addreview') }}" class="btn btn-dark" type="submit">Add a Review</a>
+                    <button class="btn btn-dark" type="submit">Edit a Review</button>
+                    <a href="{{ url_for('logout') }}" class="btn btn-dark">Logout</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
