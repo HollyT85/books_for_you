@@ -160,7 +160,10 @@ def uploadimage():
 
             image = request.files["image"]
 
-            print(image)
+            image.save(os.path.join(
+                app.config["UPLOAD_FOLDER"], image.filename))
+
+            flash("image saved")
 
             return redirect(request.url)
 
