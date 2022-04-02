@@ -10,9 +10,15 @@
                     <p class="titles"><b>{{ username }}'s Profile</b></h1>
                 </div>
                 <div class="card-body">
-                    <img class="prof-pic" src="{{ url_for('static', filename='images/profpic.png') }}">
+                    <div onload=>
+                      <!--{{ 'zzz.sochi@gmail.com' | gravatar }}>-->  
+                            <img class="prof-pic" src="{{ avatars.robohash('hello') }}">
+                    
+                    </div>
+                    <div>
                     <p class="user-info"><b>Username:</b> {{ username }}</p>
-
+                    
+                </div>
                 </div>
                 <div class="row">
                     <a href="{{ url_for('addbook') }}" class="btn btn-dark" type="submit">Add a Book</a>

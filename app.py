@@ -9,12 +9,24 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
+from flask_avatars import Avatars
+from flask_gravatar import Gravatar
+
 
 # check for env.py file
 if os.path.exists("env.py"):
     import env
 
 app = Flask(__name__)
+avatars = Avatars(app)
+gravatar = Gravatar(app,
+                    size=100,
+                    rating='g',
+                    default='retro',
+                    force_default=False,
+                    force_lower=False,
+                    use_ssl=False,
+                    base_url=None)
 
 # set configurations
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
@@ -50,6 +62,7 @@ def register():
         # save to mongo
         registration = {
             "username": request.form.get("username").lower(),
+            "email": request.form.get("email").lower(),
             "password": generate_password_hash(request.form.get("password"))
         }
         mongo.db.users.insert_one(registration)
@@ -213,6 +226,12 @@ def uploadimage():
                 return redirect(request.url)
 
     return render_template("uploadimage.html")
+
+
+@app.route("/books")
+def books():
+    inputtedbooks = mongo.db.books.find()
+    return render_template("books.html", inputtedbooks=inputtedbooks)
 
 
 if __name__ == "__main__":
