@@ -21,8 +21,9 @@ app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 UPLOAD_FOLDER = "/workspace/books_for_you/static/images/uploads"
-ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
+app.config["ALLOWED_EXTENSIONS"] = ALLOWED_EXTENSIONS
 
 mongo = PyMongo(app)
 
@@ -151,6 +152,20 @@ def allowed_file(filename):
         filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
+def filetype(filename):
+    if not "." in filename:
+        return False
+
+    ext = filename.rsplit(".", 1)[1]
+
+    if ext in app.config["ALLOWED_EXTENSIONS"]:
+        return True
+    
+    else:
+        return False
+
+
+
 @app.route("/uploadimage", methods=["GET", "POST"])
 def uploadimage():
 
@@ -160,12 +175,23 @@ def uploadimage():
 
             image = request.files["image"]
 
-            image.save(os.path.join(
-                app.config["UPLOAD_FOLDER"], image.filename))
+            if image.filename == '':
+                flash("Image must have a filename, please try again.")
+                return redirect(request.url)
 
-            flash("image saved")
+            if not filetype(image.filename):
+                flash("Invalid filetype.")
+                return redirect(request.url)
 
-            return redirect(request.url)
+            else:
+                filename = secure_filename(image.filename)
+
+                image.save(os.path.join(
+                    app.config["UPLOAD_FOLDER"], filename))
+
+                flash("image saved")
+
+                return redirect(request.url)
 
     return render_template("uploadimage.html")
 
