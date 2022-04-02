@@ -65,21 +65,23 @@ def register():
 # log in function
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    # if method is post
+    """
+    if method is post check if username exists in Mongo
+    """
     if request.method == "POST":
-        # Check if username exists in DB
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            # check password matches users input
+            # check password matches, if it does, log in
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(
-                        request.form.get("username")))
-                    return redirect(url_for(
-                        "userprofile", username=session["user"]))
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(
+                    request.form.get("username")))
+                return redirect(url_for(
+                    "userprofile", username=session["user"]))
+
             else:
                 # username / password incorrect
                 flash("Username/Password incorrect. Please try again.")
@@ -95,7 +97,9 @@ def login():
 
 @app.route("/userprofile/<username>", methods=["GET", "POST"])
 def userprofile(username):
-    # get users username from db
+    """
+    get users username from db to load userprofile
+    """
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
@@ -107,7 +111,9 @@ def userprofile(username):
 
 @app.route("/logout")
 def logout():
-    # advise user they are logged out
+    """
+    advise user they are logged out
+    """
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("home_page"))
@@ -115,6 +121,9 @@ def logout():
 
 @app.route("/addbook", methods=["GET", "POST"])
 def addbook():
+    """
+    Add a book to the database
+    """
     if request.method == "POST":
         book = {
             "title": request.form.get("title"),
@@ -130,6 +139,9 @@ def addbook():
 
 @app.route("/addreview", methods=["GET", "POST"])
 def addreview():
+    """
+    Allow user to leave a review
+    """
     if request.method == "POST":
         review = {
             "title": request.form.get("title"),
@@ -148,11 +160,17 @@ def addreview():
 
 # allow image uploads
 def allowed_file(filename):
+    """
+    check there is a file name and an extension
+    """
     return '.' in filename and \
         filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
 def filetype(filename):
+    """
+    check whether it's an image being uploaded or not
+    """
     if not "." in filename:
         return False
 
@@ -160,15 +178,16 @@ def filetype(filename):
 
     if ext in app.config["ALLOWED_EXTENSIONS"]:
         return True
-    
+
     else:
         return False
 
 
-
 @app.route("/uploadimage", methods=["GET", "POST"])
 def uploadimage():
-
+    """
+    allow user to upload image if conditions are met
+    """
     if request.method == "POST":
 
         if request.files:
