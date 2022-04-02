@@ -8,6 +8,7 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+from werkzeug.utils import secure_filename
 
 # check for env.py file
 if os.path.exists("env.py"):
@@ -19,6 +20,9 @@ app = Flask(__name__)
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
+UPLOAD_FOLDER = "/workspace/books_for_you/static/images/uploads"
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
+app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
 mongo = PyMongo(app)
 
@@ -139,6 +143,28 @@ def addreview():
         return redirect(url_for("home_page"))
 
     return render_template("addreview.html")
+
+
+# allow image uploads
+def allowed_file(filename):
+    return '.' in filename and \
+        filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+
+@app.route("/uploadimage", methods=["GET", "POST"])
+def uploadimage():
+
+    if request.method == "POST":
+
+        if request.files:
+
+            image = request.files["image"]
+
+            print(image)
+
+            return redirect(request.url)
+
+    return render_template("uploadimage.html")
 
 
 if __name__ == "__main__":
