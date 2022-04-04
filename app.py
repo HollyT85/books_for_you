@@ -44,7 +44,7 @@ mongo = PyMongo(app)
 @app.route("/")
 def home_page():
     """return user to home page"""
-    return render_template("home.html")
+    return render_template("index.html")
 
 
 # register function
@@ -232,6 +232,19 @@ def uploadimage():
 def books():
     inputtedbooks = mongo.db.books.find()
     return render_template("books.html", inputtedbooks=inputtedbooks)
+
+
+# custom error pages
+# invalid URL
+@app.errorhandler(404)
+def page_not_found(err):
+    return render_template("404.html"), 404
+
+
+# server error
+@app.errorhandler(500)
+def server_error(err):
+    return render_template("500.html"), 500
 
 
 if __name__ == "__main__":
