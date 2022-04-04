@@ -230,13 +230,13 @@ def uploadimage():
 """
 
 
-@app.route("/books")
-def books():
+@app.route("/reviews")
+def bookreviews():
     """
-    Allow user to view books
+    Allow user to view reviews
     """
-    inputtedbooks = mongo.db.books.find()
-    return render_template("books.html", inputtedbooks=inputtedbooks)
+    reviews = mongo.db.reviews.find()
+    return render_template("reviews.html", reviews=reviews)
 
 
 # custom error pages

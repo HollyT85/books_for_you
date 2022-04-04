@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block body %}
+
+
+
+<div class="container">
+    <div class="row">
+        {% for review in reviews %}
+        <div class="col-4 books">
+            <p class="books">{{ review.author }}</p><br>
+            <p class="books">{{ review.title }}</p><br>
+            <p class="books">{{ review.genre }}</p><br>
+            <p class="books">{{ review.review }}</p><br>
+            <p class="books">{{ review.review_by }}</p><br>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+{% endblock %}
