@@ -171,19 +171,20 @@ def addreview():
     return render_template("addreview.html")
 
 
-# allow image uploads
+"""
+allow image uploads
 def allowed_file(filename):
-    """
+
     check there is a file name and an extension
-    """
+
     return '.' in filename and \
         filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
 def filetype(filename):
-    """
+
     check whether it's an image being uploaded or not
-    """
+
     if not "." in filename:
         return False
 
@@ -198,9 +199,9 @@ def filetype(filename):
 
 @app.route("/uploadimage", methods=["GET", "POST"])
 def uploadimage():
-    """
+
     allow user to upload image if conditions are met
-    """
+
     if request.method == "POST":
 
         if request.files:
@@ -226,24 +227,32 @@ def uploadimage():
                 return redirect(request.url)
 
     return render_template("uploadimage.html")
+"""
 
 
 @app.route("/books")
 def books():
+    """
+    Allow user to view books
+    """
     inputtedbooks = mongo.db.books.find()
     return render_template("books.html", inputtedbooks=inputtedbooks)
 
 
 # custom error pages
-# invalid URL
 @app.errorhandler(404)
-def page_not_found(err):
+def page_not_found(e):
+    """
+    incorrect page custom page
+    """
     return render_template("404.html"), 404
 
 
-# server error
 @app.errorhandler(500)
 def server_error(err):
+    """
+    server error custom page
+    """
     return render_template("500.html"), 500
 
 

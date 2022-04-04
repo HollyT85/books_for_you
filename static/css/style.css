@@ -77,10 +77,9 @@
 
 /*review page*/
 
-.book-pic {
-    float: right;
+.bookpic {
     width: 15rem;
-    height: 20rem;
+    height: 18rem;
     
 }
 
@@ -88,3 +87,4 @@
     display: inline-block;
     color: white;
 }
+
