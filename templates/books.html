@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block body %}
+
+<div class="row">
+    {% for book in books %}
+    <div class="col-4 book-background">
+        <img class="bookcover" src = {{book.image}}>
+        <p class="books"><b>Author:</b> {{ book.author }}</p><br>
+        <p class="books"><b>Title:</b> {{ book.title }}</p><br>
+        
+       
+    </div>
+    {% endfor %}
+
+</div>
+
+
+
+{% endblock %}

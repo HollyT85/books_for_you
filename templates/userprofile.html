@@ -4,21 +4,20 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col">
-        <div class="card text-center profile">
-            
+            <div class="card text-center profile">
+
                 <div class="card-header">
                     <p class="titles"><b>{{ username | title }}'s Profile</b></h1>
                 </div>
                 <div class="card-body">
                     <div onload=>
-                    <!--{{ 'zzz.sochi@gmail.com' | gravatar }}>-->  
-                            <img class="prof-pic" src="{{ avatars.robohash('hello') }}">
-                    
+                        <!--{{ 'zzz.sochi@gmail.com' | gravatar }}>-->
+                        <img class="prof-pic" src="{{ avatars.robohash('hello') }}">
+
                     </div>
                     <div>
-                    <p class="user-info"><b>Username:</b> {{ username }}</p>
-                    
-                </div>
+                        <p> Username : {{ username }}</p>
+                    </div>
                 </div>
                 <div class="row">
                     <a href="{{ url_for('addreview') }}" class="btn btn-dark" type="submit">Add a Review</a>

@@ -117,9 +117,15 @@ def userprofile(username):
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        return render_template("userprofile.html", username=username)
+        return render_template("userprofile.html", 
+        username=username)
 
     return redirect(url_for("login"))
+
+
+@app.route("/collapse")
+def collapse():
+    return render_template("collapse.html")
 
 
 @app.route("/logout")
@@ -139,6 +145,7 @@ def addbook():
     """
     if request.method == "POST":
         book = {
+            "image": request.form.get("image"),
             "title": request.form.get("title"),
             "author": request.form.get("author"),
             "genre": request.form.get("genre"),
@@ -171,65 +178,6 @@ def addreview():
     return render_template("addreview.html")
 
 
-"""
-allow image uploads
-def allowed_file(filename):
-
-    check there is a file name and an extension
-
-    return '.' in filename and \
-        filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-
-
-def filetype(filename):
-
-    check whether it's an image being uploaded or not
-
-    if not "." in filename:
-        return False
-
-    ext = filename.rsplit(".", 1)[1]
-
-    if ext in app.config["ALLOWED_EXTENSIONS"]:
-        return True
-
-    else:
-        return False
-
-
-@app.route("/uploadimage", methods=["GET", "POST"])
-def uploadimage():
-
-    allow user to upload image if conditions are met
-
-    if request.method == "POST":
-
-        if request.files:
-
-            image = request.files["image"]
-
-            if image.filename == '':
-                flash("Image must have a filename, please try again.")
-                return redirect(request.url)
-
-            if not filetype(image.filename):
-                flash("Invalid filetype.")
-                return redirect(request.url)
-
-            else:
-                filename = secure_filename(image.filename)
-
-                image.save(os.path.join(
-                    app.config["UPLOAD_FOLDER"], filename))
-
-                flash("image saved")
-
-                return redirect(request.url)
-
-    return render_template("uploadimage.html")
-"""
-
-
 @app.route("/reviews")
 def bookreviews():
     """
@@ -237,6 +185,14 @@ def bookreviews():
     """
     reviews = mongo.db.reviews.find()
     return render_template("reviews.html", reviews=reviews)
+
+@app.route("/books")
+def allbooks():
+    """
+    Allow users to view books
+    """
+    books = mongo.db.books.find()
+    return render_template("books.html", books=books)
 
 
 # custom error pages

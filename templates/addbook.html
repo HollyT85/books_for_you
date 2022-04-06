@@ -14,6 +14,11 @@
                 </div>-->
                     <form method="POST" action="{{ url_for('addbook') }}">
                         <div class="row">
+                            <label for="image" class="form-label"><b>Image(enter URL):</b></label><br>
+                            <input type="text" name="image" class="form-control" id="image" placeholder="Enter image URL"
+                                required><br>
+                        </div>
+                        <div class="row">
                             <label for="title" class="form-label"><b>Title:</b></label><br>
                             <input type="text" name="title" class="form-control" id="title" placeholder="Enter title"
                                 required><br>
