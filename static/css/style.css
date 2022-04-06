@@ -14,7 +14,7 @@
 }
 
 /*home page, login and registration cards*/
-.card {
+.cards {
     position: absolute;
     float: left;
     padding: 10px;
@@ -101,14 +101,21 @@
     border: green solid 5px;
 }
 
-.book-info {
-    margin: 0px;
-    padding: 0px;
-}
-
 .bookcover {
     width: 10rem;
     height:15rem;
-    margin-bottom: 1rem;
+    margin-right: 1rem;
     border: 2px black solid;
+    float: left;
+}
+
+.book-info {
+    position:relative;
+    margin:0;
+}
+
+
+.rows {
+    margin: 2rem;
+    border: 2px pink solid;
 }
