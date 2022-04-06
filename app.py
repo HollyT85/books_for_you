@@ -8,7 +8,6 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
-from werkzeug.utils import secure_filename
 from flask_avatars import Avatars
 from flask_gravatar import Gravatar
 
@@ -87,8 +86,8 @@ def login():
 
         if existing_user:
             # check password matches, if it does, log in
-            if check_password_hash(
-                existing_user["password"], request.form.get("password")):
+            if check_password_hash(existing_user["password"], 
+                request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(
                     request.form.get("username")))
@@ -117,15 +116,9 @@ def userprofile(username):
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        return render_template("userprofile.html", 
-        username=username)
+        return render_template("userprofile.html", username=username)
 
     return redirect(url_for("login"))
-
-
-@app.route("/collapse")
-def collapse():
-    return render_template("collapse.html")
 
 
 @app.route("/logout")
@@ -178,18 +171,15 @@ def addreview():
     return render_template("addreview.html")
 
 
+@app.route("/viewreview")
+def viewreview():
+    return render_template("viewreview.html")
+
+
 @app.route("/books")
 def browsebooks():
     """
     Allow user to view books on system
-    """
-    books = mongo.db.books.find()
-    return render_template("books.html", books=books)
-
-@app.route("/books")
-def allbooks():
-    """
-    Allow users to view books
     """
     books = mongo.db.books.find()
     return render_template("books.html", books=books)

@@ -7,7 +7,8 @@
         <img class="bookcover" src = {{book.image}}>
         <p class="book-info"><b>Author:</b> {{ book.author }}</p><br>
         <p class="book-info"><b>Title:</b> {{ book.title }}</p><br>
-        
+        <a href="{{ url_for('addreview') }}" class="btn btn-dark" type="submit">Add a Review</a>
+        <a href="{{ url_for('viewreview') }}" class="btn btn-dark" type="submit">View Reviews</a>
     </div>
     {% endfor %}
 

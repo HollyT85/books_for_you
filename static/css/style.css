@@ -97,6 +97,10 @@
     border: yellow solid 5px;
 }
 
+.book-background:hover {
+    border: green solid 5px;
+}
+
 .book-info {
     margin: 0px;
     padding: 0px;
@@ -106,4 +110,5 @@
     width: 10rem;
     height:15rem;
     margin-bottom: 1rem;
+    border: 2px black solid;
 }

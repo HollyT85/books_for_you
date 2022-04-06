@@ -9,25 +9,7 @@
                     <p class="titles"><b>Add New Review</b></h1>
                 </div>
                 <div class="card-body">
-                    <!--<div>
-                <img class="book-pic" src="{{ url_for('static', filename='images/blank.jpg') }}">
-                </div>-->
                     <form method="POST" action="{{ url_for('addreview') }}">
-                        <div class="row">
-                            <label for="title" class="form-label"><b>Title:</b></label><br>
-                            <input type="text" name="title" class="form-control" id="title" placeholder="Enter title"
-                                required><br>
-                        </div>
-                        <div class="row">
-                            <label for="author" class="form-label"><b>Author:</b></label><br>
-                            <input type="text" name="author" class="form-control" id="author" placeholder="Enter author"
-                                required><br>
-                        </div>
-                        <div class="row">
-                            <label for="genre" class="form-label"><b>Genre:</b></label><br>
-                            <input type="text" name="genre" class="form-control" id="genre" placeholder="Enter genre"
-                                required><br>
-                        </div>
                         <div class="row">
                             <label for="review" class="form-label"><b>Review:</b></label><br>
                             <textarea name="review" class="form-control" id="review"
@@ -36,8 +18,11 @@
                         </div>
                         <div class="row">
                             <label for="rating" class="form-label"><b>Rating:</b></label><br>
-                            <input type="text" name="rating" class="form-control" id="rating"
-                                placeholder="Enter rating out of 5" required><br>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
                         </div>
                         <div class="row">
                             <div class="col">
