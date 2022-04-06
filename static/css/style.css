@@ -108,3 +108,7 @@ a {
 .rows {
     margin: 2rem;
 }
+
+.rating {
+    padding: 1px;
+}
