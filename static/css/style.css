@@ -83,20 +83,27 @@
     
 }
 
-.books {
-    display: inline-block;
-    color: black;
-}
+
+
+/* Display books on book pages */
 
 .book-background {
     background-color: rgba(192, 192, 192, 0.8);
-    margin: 2rem;
-    padding: 2rem;
+    margin: 1rem;
+    padding: 1rem;
+    display: inline-block;
+    text-align: center;
+    width: auto;
+    border: yellow solid 5px;
+}
+
+.book-info {
+    margin: 0px;
+    padding: 0px;
 }
 
 .bookcover {
     width: 10rem;
     height:15rem;
-    margin-left: auto;
-    margin-right: auto;
+    margin-bottom: 1rem;
 }

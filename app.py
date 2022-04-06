@@ -178,13 +178,13 @@ def addreview():
     return render_template("addreview.html")
 
 
-@app.route("/reviews")
-def bookreviews():
+@app.route("/books")
+def browsebooks():
     """
-    Allow user to view reviews
+    Allow user to view books on system
     """
-    reviews = mongo.db.reviews.find()
-    return render_template("reviews.html", reviews=reviews)
+    books = mongo.db.books.find()
+    return render_template("books.html", books=books)
 
 @app.route("/books")
 def allbooks():
