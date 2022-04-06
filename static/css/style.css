@@ -6,6 +6,10 @@
     font-family: 'Montserrat Alternates', sans-serif;;
 }
 
+.card {
+    background-color: rgba(192, 192, 192, 0.8)
+}
+
 /*Background image for all pages*/
 .background {
     height: 100vh;
@@ -31,7 +35,7 @@
     color:red;
 }
 
-.link {
+a {
     text-decoration: none;
     color: black;
 }
@@ -87,23 +91,10 @@
 
 /* Display books on book pages */
 
-.book-background {
-    background-color: rgba(192, 192, 192, 0.8);
-    margin: 1rem;
-    padding: 1rem;
-    display: inline-block;
-    text-align: center;
-    width: auto;
-    border: yellow solid 5px;
-}
-
-.book-background:hover {
-    border: green solid 5px;
-}
 
 .bookcover {
-    width: 10rem;
-    height:15rem;
+    width: 7rem;
+    height:10rem;
     margin-right: 1rem;
     border: 2px black solid;
     float: left;
@@ -111,11 +102,9 @@
 
 .book-info {
     position:relative;
-    margin:0;
+    margin: 0;
 }
-
 
 .rows {
     margin: 2rem;
-    border: 2px pink solid;
 }

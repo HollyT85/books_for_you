@@ -176,11 +176,6 @@ def viewreview():
     return render_template("viewreview.html")
 
 
-@app.route("/collapse")
-def collapse():
-    return render_template("collapse.html")
-
-
 @app.route("/books")
 def browsebooks():
     """

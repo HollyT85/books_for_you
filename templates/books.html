@@ -13,14 +13,29 @@
                     <img class="bookcover" src={{book.image}}>
                     <p class="book-info"><b>Author:</b> {{ book.author }}</p><br>
                     <p class="book-info"><b>Title:</b> {{ book.title }}</p><br>
+                    <p class="book-info"><b>Average Rating:</b></p><br>
+
 
                 </div>
 
 
                 <div class="card">
                     <div class="card-header">
-                        <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                        <a class="collapsed card-link" data-toggle="collapse" href="#collapseOne">
                             Read Reviews
+                        </a>
+                    </div>
+                    <div id="collapseOne" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                            Enter Reviews
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                            Add Review
                         </a>
                     </div>
                     <div id="collapseTwo" class="collapse" data-parent="#accordion">
@@ -29,9 +44,9 @@
                         </div>
                     </div>
                 </div>
-
+<!--
                 <a href="{{ url_for('addreview') }}" class="btn btn-dark" type="submit">Add a Review</a>
-                <a href="{{ url_for('viewreview') }}" class="btn btn-dark" type="submit">View Reviews</a>
+                <a href="{{ url_for('viewreview') }}" class="btn btn-dark" type="submit">View Reviews</a>-->
             </div>
         </div>
     </div>
