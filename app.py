@@ -114,7 +114,7 @@ def userprofile(username):
     """
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-
+    
     if session["user"]:
         return render_template("userprofile.html", username=username)
 
@@ -145,7 +145,7 @@ def addbook():
         }
         mongo.db.books.insert_one(book)
         flash("Book successfully added. Thanks!")
-        return redirect(url_for("home_page"))
+        return redirect(url_for("books"))
 
     return render_template("addbook.html")
 
@@ -156,17 +156,16 @@ def addreview():
     Allow user to leave a review
     """
     if request.method == "POST":
-        review = {
-            "title": request.form.get("title"),
-            "author": request.form.get("author"),
-            "genre": request.form.get("genre"),
+        
+        review = {        
+            "id":request.form.get("id"),
             "review": request.form.get("review"),
             "rating": request.form.get("rating"),
             "review_by": session["user"]
         }
-        mongo.db.reviews.insert_one(review)
+        mongo.db.books.insert_one(review)
         flash("Review successfully added. Thanks!")
-        return redirect(url_for("home_page"))
+        return redirect(url_for("browsebooks"))
 
     return render_template("addreview.html")
 

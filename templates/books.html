@@ -10,6 +10,7 @@
             <div class="card">
                 <div class="card-body">
                     <img class="bookcover" src={{book.image}}>
+                    <p class="book-info"><b>Id:</b> {{ book._id }}</p><br>
                     <p class="book-info"><b>Author:</b> {{ book.author }}</p><br>
                     <p class="book-info"><b>Title:</b> {{ book.title }}</p><br>
                     <p class="book-info"><b>Average Rating:</b></p><br>
@@ -38,6 +39,10 @@
                 <div id="collapseTwo" class="collapse" data-parent="#accordion">
                     <div class="card-body">
                         <form method="POST" action="{{ url_for('addreview') }}">
+                            <div class="row">
+                                <label for="id" class="form-label"><b>ID:</b></label><br>
+                                <input type="text" name="id" class="form-control" id="id" value="{{ book._id }}" disabled> <br>
+                            </div>
                             <div class="row">
                                 <label for="review" class="form-label"><b>Review:</b></label><br>
                                 <textarea name="review" class="form-control" id="review"
