@@ -9,8 +9,8 @@
             <div class="card">
                 <div class="card-body">
                     <img class="bookcover" src={{book.image}}>
-                    <p class="book-info"><b>Author:</b> {{ book.author }}</p><br>
-                    <p class="book-info"><b>Title:</b> {{ book.title }}</p><br>
+                    <p class="book-info"><b>Author:</b> {{ book.author | title }}</p><br>
+                    <p class="book-info"><b>Title:</b> {{ book.title | title }}</p><br>
                     <p class="book-info"><b>Average Rating:</b></p><br>
                 </div>
             </div>
@@ -28,7 +28,7 @@
 
                     <div class="card-body">
                         {% for review in reviews %}
-                        {% if book.title|lower == review.title|lower %}
+                        {% if book.title == review.title %}
                         <div class="box">
                             <p class="book-info"><b>Review:</b>{{ review.review }}</p>
                             <p class="book-info"><b>Rating:</b>{{ review.rating }}</p>
