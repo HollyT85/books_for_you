@@ -6,8 +6,18 @@
     font-family: 'Montserrat Alternates', sans-serif;;
 }
 
+.hide {
+    display:none;
+}
+
 .card {
     background-color: rgba(192, 192, 192, 0.8)
+}
+
+.box {
+    padding: 1rem;
+    border: 1px solid black;
+    margin: 1px;
 }
 
 /*Background image for all pages*/

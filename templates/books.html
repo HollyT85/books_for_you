@@ -10,31 +10,39 @@
             <div class="card">
                 <div class="card-body">
                     <img class="bookcover" src={{book.image}}>
-                    <p class="book-info"><b>Title:</b> {{ book._id }}</p><br>
                     <p class="book-info"><b>Author:</b> {{ book.author }}</p><br>
                     <p class="book-info"><b>Title:</b> {{ book.title }}</p><br>
                     <p class="book-info"><b>Average Rating:</b></p><br>
                 </div>
             </div>
             <!--View Reviews which have been left-->
+            
             <div class="card">
+                
                 <div class="card-header">
                     <a class="collapsed card-link" data-toggle="collapse" href="#collapseOne">
                         See Reviews
                     </a>
                 </div>
+                
                 <div id="collapseOne" class="collapse" data-parent="#accordion">
+
                     <div class="card-body">
                         {% for review in reviews %}
-                            {% if book.title == review.title %}
-                                <p class="book-info"><b>Review:</b>{{ review.review }}</p>
-                                <p class="book-info"><b>Rating:</b>{{ review.rating }}</p>
-                                <p class="book-info"><b>Reviewed By:</b>{{ review.review_by | title }}</p>
-                            {% endif %}
+                        {% if book.title == review.title %}
+                        <div class="box">
+                            <p class="book-info"><b>Review:</b>{{ review.review }}</p>
+                            <p class="book-info"><b>Rating:</b>{{ review.rating }}</p>
+                            <p class="book-info"><b>Reviewed By:</b>{{ review.review_by | title }}</p>
+                        </div>
+                        {% endif %}
                         {% endfor %}
                     </div>
+                
                 </div>
+                
             </div>
+            
             <!--Leave Reviews-->
             <div class="card">
                 <div class="card-header">
@@ -47,7 +55,7 @@
                         <form method="POST" action="{{ url_for('addreview') }}">
                             <div class="row">
                                 <label for="title" class="form-label"><b>Title:</b></label><br>
-                                <input type="text" name="title" class="form-control" id="title" required> <br>
+                                <input type="text" name="title" class="form-control" id="id" required> <br>
                             </div>
                             <div class="row">
                                 <label for="review" class="form-label"><b>Review:</b></label><br>
@@ -74,13 +82,11 @@
                     </div>
                 </div>
             </div>
+            
         </div>
     </div>
 </div>
 
-<!--
-                <a href="{{ url_for('addreview') }}" class="btn btn-dark" type="submit">Add a Review</a>
-                <a href="{{ url_for('viewreview') }}" class="btn btn-dark" type="submit">View Reviews</a>-->
 
 {% endfor %}
 

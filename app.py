@@ -86,7 +86,7 @@ def login():
 
         if existing_user:
             # check password matches, if it does, log in
-            if check_password_hash(existing_user["password"], 
+            if check_password_hash(existing_user["password"],
                 request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(
@@ -114,7 +114,7 @@ def userprofile(username):
     """
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    
+
     if session["user"]:
         return render_template("userprofile.html", username=username)
 
@@ -140,8 +140,8 @@ def addbook():
         book = {
             "image": request.form.get("image"),
             "title": request.form.get("title").title(),
-            "author": request.form.get("author"),
-            "genre": request.form.get("genre"),
+            "author": request.form.get("author").title(),
+            "genre": request.form.get("genre").title(),
         }
         mongo.db.books.insert_one(book)
         flash("Book successfully added. Thanks!")
@@ -156,12 +156,12 @@ def addreview():
     Allow user to leave a review
     """
     if request.method == "POST":
-        
-        review = {        
+
+        review = {
             "title": request.form.get("title").title(),
             "review": request.form.get("review"),
             "rating": request.form.get("rating"),
-            "review_by": session["user"]
+            "review_by": session["user"].title()
         }
         mongo.db.reviews.insert_one(review)
         flash("Review successfully added. Thanks!")
