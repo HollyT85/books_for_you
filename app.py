@@ -139,7 +139,7 @@ def addbook():
     if request.method == "POST":
         book = {
             "image": request.form.get("image"),
-            "title": request.form.get("title"),
+            "title": request.form.get("title").title(),
             "author": request.form.get("author"),
             "genre": request.form.get("genre"),
         }
@@ -158,12 +158,12 @@ def addreview():
     if request.method == "POST":
         
         review = {        
-            "id":request.form.get("id"),
+            "title": request.form.get("title").title(),
             "review": request.form.get("review"),
             "rating": request.form.get("rating"),
             "review_by": session["user"]
         }
-        mongo.db.books.insert_one(review)
+        mongo.db.reviews.insert_one(review)
         flash("Review successfully added. Thanks!")
         return redirect(url_for("browsebooks"))
 
@@ -181,7 +181,8 @@ def browsebooks():
     Allow user to view books on system
     """
     books = mongo.db.books.find()
-    return render_template("books.html", books=books)
+    reviews = mongo.db.reviews.find()
+    return render_template("books.html", books=books, reviews=reviews)
 
 
 # custom error pages
