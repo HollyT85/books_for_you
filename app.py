@@ -128,7 +128,7 @@ def logout():
     """
     flash("You have been logged out")
     session.pop("user")
-    return redirect(url_for("home_page"))
+    return render_template("index.html")
 
 
 @app.route("/addbook", methods=["GET", "POST"])
@@ -170,11 +170,6 @@ def addreview():
     return render_template("addreview.html")
 
 
-@app.route("/viewreview")
-def viewreview():
-    return render_template("viewreview.html")
-
-
 @app.route("/books")
 def browsebooks():
     """
@@ -182,7 +177,7 @@ def browsebooks():
     """
     books = mongo.db.books.find()
     reviews = mongo.db.reviews.find()
-    return render_template("books.html", books=books, reviews=reviews)
+    return render_template("books.html", books=books, reviews=list(reviews))
 
 
 # custom error pages
