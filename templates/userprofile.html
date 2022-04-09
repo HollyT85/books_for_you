@@ -11,20 +11,28 @@
                 </div>
                 <div class="card-body">
                     <div onload=>
-                        
                         <img class="prof-pic" src="{{ avatars.robohash('hello') }}">
-
                     </div>
                     <div>
                         <p> Username : {{ username }}</p>
-                        
+                        <a href="{{ url_for('addbook') }}" class="btn btn-dark" type="submit">Add Book</a>
+                        <a href="{{ url_for('logout') }}" class="btn btn-dark">Logout</a>
                     </div>
                 </div>
                 <div class="row">
-                    <a href="{{ url_for('addbook') }}" class="btn btn-dark" type="submit">Add Book</a>
-                    <button class="btn btn-dark" type="submit">Edit a Review</button>
-                    <button class="btn btn-dark" type="submit">Delete a Review</button>
-                    <a href="{{ url_for('logout') }}" class="btn btn-dark">Logout</a>
+                    <div class="col">
+                        <p>Reviews left</p>
+                        {% for review in reviews %}
+                        {% if review.review_by | title == session['user'] | title %}
+                        <div class=" box">
+                            <p> {{ review.title }}</p><br>
+                            <p> {{ review.review }}</p>
+                            <button class="btn btn-dark" type="submit">Edit</button>
+                            <button class="btn btn-dark" type="submit">Delete</button>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </div>
