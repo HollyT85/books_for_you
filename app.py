@@ -116,7 +116,8 @@ def userprofile(username):
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        return render_template("userprofile.html", username=username)
+        return render_template(
+            "userprofile.html", username=username)
 
     return redirect(url_for("login"))
 
@@ -145,7 +146,7 @@ def addbook():
         }
         mongo.db.books.insert_one(book)
         flash("Book successfully added. Thanks!")
-        return redirect(url_for("books"))
+        return redirect(url_for("browsebooks"))
 
     return render_template("addbook.html")
 
