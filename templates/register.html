@@ -1,32 +1,31 @@
 {% extends "base.html" %}
 {% block body %}
 
-<div class="container-fluid">
-    <div class="card cards">
-        <div class="card-header">
-            Register
-        </div>
-        <div class="card-body">
-            <form method="POST" action="{{ url_for('register') }}">
-                <div class="row">
-                    <label for="username" class="form-label">Username </label>
-                    <input type="text" name="username" class="form-control" id="username"
-                    pattern="^[a-zA-Z0-9]{6,}$" placeholder="Enter a username" required>
-                </div>
-                <div class="row">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" name="password" class="form-control" id="password"
+<div class="card cards">
+    <div class="card-header">
+        Register
+    </div>
+    <div class="card-body">
+        <!--check register function in python-->
+        <form method="POST" action="{{ url_for('register') }}">
+            <div class="row">
+                <label for="username" class="form-label">Username </label>
+                <input type="text" name="username" class="form-control" id="username" pattern="^[a-zA-Z0-9]{6,}$"
+                    placeholder="Enter a username" required>
+            </div>
+            <div class="row">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" name="password" class="form-control" id="password"
                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,}" placeholder="Enter Password" required>
-                </div>
-                <div class="row">
-                    <button type="submit" class="btn btn-dark form-button">Register</button>
-                </div>
-            </form>
-            
-            <p>Already have an account? <a class="link" href="{{ url_for('login') }}">Login</a></p>
-        </div>
-        </div>
+            </div>
+            <div class="row">
+                <button type="submit" class="btn btn-dark form-button">Register</button>
+            </div>
+        </form>
+        <!--Allow users to easily log in if they have an account already-->
+        <p>Already have an account? <a class="link" href="{{ url_for('login') }}">Login</a></p>
     </div>
 </div>
+
 
 {% endblock %}

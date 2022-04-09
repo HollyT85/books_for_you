@@ -1,13 +1,9 @@
-/* Overall styling*/
+/*Multi-page styling*/
 *{
     padding: 0;
     margin: 0;
     position:relative;
     font-family: 'Montserrat Alternates', sans-serif;;
-}
-
-.hide {
-    display:none;
 }
 
 .card {
@@ -97,10 +93,7 @@ a {
     
 }
 
-
-
 /* Display books on book pages */
-
 
 .bookcover {
     width: 7rem;

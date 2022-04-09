@@ -7,6 +7,7 @@
             Login
         </div>
         <div class="card-body">
+            <!--check login function in python-->
             <form method="POST" action="{{ url_for('login') }}">
                 <div class="row">
                     <label for="username" class="form-label">Username </label>
@@ -20,6 +21,7 @@
                     <button type="submit" class="btn btn-dark form-button">Login</button>
                 </div>
             </form>
+            <!--Allow users to easily navigate to register if they aren't already-->
             <p>Don't have an account? <a class="link" href="{{ url_for('register') }}">Register</a></p>
         </div>
         </div>

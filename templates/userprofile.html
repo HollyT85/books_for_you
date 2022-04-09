@@ -1,42 +1,42 @@
 {% extends "base.html" %}
 {% block body %}
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col">
-            <div class="card text-center profile">
-
-                <div class="card-header">
-                    <p class="titles"><b>{{ username | title }}'s Profile</b></h1>
+<div class="row">
+    <div class="col">
+        <div class="card text-center profile">
+            <!--display username -->
+            <div class="card-header">
+                <p class="titles"><b>{{ username | title }}'s Profile</b></h1>
+            </div>
+            <div class="card-body">
+                <!-- auto generated profile picture-->
+                <img class="prof-pic" src="{{ avatars.robohash('hello') }}">
+                <div>
+                    <!--allow user to log out / add a book easily-->
+                    <p> Username : {{ username }}</p>
+                    <a href="{{ url_for('addbook') }}" class="btn btn-dark" type="submit">Add Book</a>
+                    <a href="{{ url_for('logout') }}" class="btn btn-dark">Logout</a>
                 </div>
-                <div class="card-body">
-                    <div onload=>
-                        <img class="prof-pic" src="{{ avatars.robohash('hello') }}">
+            </div>
+            <!--allow user to view reviews they have left and edit/delete them-->
+            <div class="row">
+                <div class="col">
+                    <p>Reviews left</p>
+                    {% for review in reviews %}
+                    {% if review.review_by | title == session['user'] | title %}
+                    <div class=" box">
+                        <p> {{ review.title }}</p><br>
+                        <p> {{ review.review }}</p>
+                        <button class="btn btn-dark" type="submit">Edit</button>
+                        <button class="btn btn-dark" type="submit">Delete</button>
                     </div>
-                    <div>
-                        <p> Username : {{ username }}</p>
-                        <a href="{{ url_for('addbook') }}" class="btn btn-dark" type="submit">Add Book</a>
-                        <a href="{{ url_for('logout') }}" class="btn btn-dark">Logout</a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <p>Reviews left</p>
-                        {% for review in reviews %}
-                        {% if review.review_by | title == session['user'] | title %}
-                        <div class=" box">
-                            <p> {{ review.title }}</p><br>
-                            <p> {{ review.review }}</p>
-                            <button class="btn btn-dark" type="submit">Edit</button>
-                            <button class="btn btn-dark" type="submit">Delete</button>
-                        </div>
-                        {% endif %}
-                        {% endfor %}
-                    </div>
+                    {% endif %}
+                    {% endfor %}
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 
 {% endblock %}
