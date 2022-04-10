@@ -195,7 +195,7 @@ def viewreviews():
 def edit(review_id):
     """
     Allow user to edit their review
-    """
+    
     if request.method == "POST":
         
         update = {
@@ -204,10 +204,11 @@ def edit(review_id):
             "rating": request.form.get("rating"),
             "review_by": session["user"].title()
         }
-        reviews = mongo.db.reviews.find()
+        
         mongo.db.reviews.update({"_id": ObjectId(review_id)}, update)
         flash("Review Updated")
-
+    """
+    reviews = mongo.db.reviews.find()
     return render_template("edit.html", reviews=reviews)
 
 
@@ -216,8 +217,9 @@ def delete(review_id):
     """
     Allow user to delete a review
     """
-    return render_template("viewreviews.html")
-
+    mongo.db.reviews.delete_one({"_id": ObjectId(review_id)})
+    flash("Review removed")
+    return render_template("userprofile.html")
 
 
 # custom error pages
