@@ -23,10 +23,11 @@
         <div class="container-fluid">
             <a class="navbar-brand text-white" href="{{ url_for('home_page') }}">Next Book, Please</a>
             <a class="navbar-brand text-white" href="{{ url_for('browsebooks') }}">Browse Books</a>
+            <!--if there is a user logged in they can see their profile from nav bar otherwise they will see log in-->
             {% if session.user %}
                 <a class="navbar-brand text-white" href="{{ url_for('userprofile', username=session['user']) }}">Profile</a>
             {% else %}
-            <a class="navbar-brand text-white" href="{{ url_for('login') }}">Login</a>
+                <a class="navbar-brand text-white" href="{{ url_for('login') }}">Login</a>
             {% endif %}
             <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

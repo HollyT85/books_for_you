@@ -115,11 +115,9 @@ def userprofile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
-    reviews = mongo.db.reviews.find()
-
     if session["user"]:
         return render_template(
-            "userprofile.html", username=username, reviews=list(reviews))
+            "userprofile.html", username=username)
 
     return redirect(url_for("login"))
 
@@ -181,6 +179,16 @@ def browsebooks():
     books = mongo.db.books.find().limit(10)
     reviews = mongo.db.reviews.find()
     return render_template("books.html", books=books, reviews=list(reviews))
+
+
+@app.route("/viewreviews")
+def viewreviews():
+    """
+    Allow user to see own reviews
+    """
+    reviews = mongo.db.reviews.find()
+
+    return render_template("viewreviews.html", reviews=list(reviews))
 
 
 # custom error pages

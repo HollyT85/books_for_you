@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block body %}
 
+<!--Profile card where user can logout/add a book to the database-->
 <div class="row">
-    <div class="col">
+    <div class="col-6">
         <div class="card text-center profile">
             <!--display username -->
             <div class="card-header">
@@ -13,30 +14,17 @@
                 <img class="prof-pic" src="{{ avatars.robohash('hello') }}">
                 <div>
                     <!--allow user to log out / add a book easily-->
-                    <p> Username : {{ username }}</p>
+                    <p> <b>Username:</b> {{ username | title }}</p>
                     <a href="{{ url_for('addbook') }}" class="btn btn-dark" type="submit">Add Book</a>
+                    <a href="{{ url_for('viewreviews') }}" class="btn btn-dark" type="submit">View Your Reviews</a>
                     <a href="{{ url_for('logout') }}" class="btn btn-dark">Logout</a>
-                </div>
-            </div>
-            <!--allow user to view reviews they have left and edit/delete them-->
-            <div class="row">
-                <div class="col">
-                    <p>Reviews left</p>
-                    {% for review in reviews %}
-                    {% if review.review_by | title == session['user'] | title %}
-                    <div class=" box">
-                        <p> {{ review.title }}</p><br>
-                        <p> {{ review.review }}</p>
-                        <button class="btn btn-dark" type="submit">Edit</button>
-                        <button class="btn btn-dark" type="submit">Delete</button>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
 
 
 {% endblock %}

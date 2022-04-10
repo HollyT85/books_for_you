@@ -16,6 +16,10 @@
     margin: 1px;
 }
 
+.spacing {
+    margin: 20px;
+}
+
 /*Background image for all pages*/
 .background {
     height: 100vh;
@@ -57,18 +61,11 @@ a {
 .titles {
     color: black;
     text-align: center;
-    padding: 1rem;
 }
 
 /*userprofile page*/
-.background-color {
-    width: 50vw;
-    border-left: auto;
-    border-right: auto;
-    background-color: rgba(192, 192, 192, 0.8); 
-    margin:auto;
+.profile {
     margin-top: 2rem;
-    padding: 1rem;
 }
 
 .user-info {
