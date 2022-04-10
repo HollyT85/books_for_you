@@ -219,7 +219,9 @@ def delete(review_id):
     """
     mongo.db.reviews.delete_one({"_id": ObjectId(review_id)})
     flash("Review removed")
-    return render_template("userprofile.html")
+    return redirect(url_for("userprofile", username=session['user']))
+
+    return render_template("books.html")
 
 
 # custom error pages
