@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block body %}
+
+{% for review in reviews %}
+<form method="POST" action="{{ url_for('edit', review_id=review._id) }}">
+    <div class="row">
+        <label for="title" class="form-label"><b>Title:</b></label><br>
+        <input type="text" name="title" class="form-control" id="id" required> <br>
+    </div>
+    <div class="row">
+        <label for="review" class="form-label"><b>Review:</b></label><br>
+        <textarea name="review" class="form-control" id="review"
+            placeholder="Enter review; did you like it? Why/not? Would you recommend? Why/not?"
+            required></textarea><br>
+    </div>
+    <div class="row">
+        <p>Rating:</p>
+        <div class="rating">
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+        </div>
+    </div>
+<div class="row">
+    <div class="col">
+        <button class="btn btn-dark" type="submit">Save</button>
+    </div>
+</div>
+</form>
+{% endfor %}
+{% end block %}

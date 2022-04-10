@@ -26,6 +26,9 @@
                         data-parent="#accordion{{ review._id }}">
                         <div class="card-body">
                             <p>{{  review.review }} </p>
+                            <a href="{{ url_for('edit', reviewid=review._id) }}" class="btn btn-dark" type="submit">Edit</a>
+                            <a href="{{ url_for('delete', reviewid=review._id) }}" class="btn btn-dark" type="submit">Delete</a>
+                            
                         </div>
                     </div>
                 </div>

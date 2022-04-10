@@ -176,7 +176,7 @@ def browsebooks():
     """
     Allow user to view books on system
     """
-    books = mongo.db.books.find().limit(10)
+    books = mongo.db.books.find().limit(10).sort("title", 1)
     reviews = mongo.db.reviews.find()
     return render_template("books.html", books=books, reviews=list(reviews))
 
@@ -189,6 +189,24 @@ def viewreviews():
     reviews = mongo.db.reviews.find()
 
     return render_template("viewreviews.html", reviews=list(reviews))
+
+
+@app.route("/edit/<review_id>", methods=["GET", "POST"])
+def edit(review_id):
+    """
+    Allow user to edit a review
+    """
+
+    return render_template("viewreviews.html")
+
+
+@app.route("/delete/<review_id>", methods=["GET", "POST"])
+def delete(review_id):
+    """
+    Allow user to delete a review
+    """
+    return render_template("viewreviews.html")
+
 
 
 # custom error pages
