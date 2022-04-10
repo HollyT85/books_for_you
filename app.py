@@ -205,8 +205,9 @@ def edit(review_id):
             "review_by": session["user"].title()
         }
 
-        mongo.db.reviews.update_one({"_id": ObjectId(review_id)}, update)
+        mongo.db.reviews.replace_one({"_id": ObjectId(review_id)}, update)
         flash("Review Updated")
+        return redirect(url_for("userprofile", username=session['user']))
     
     reviews = mongo.db.reviews.find()
     return render_template("edit.html", reviews=reviews)
