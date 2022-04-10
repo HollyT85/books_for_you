@@ -194,10 +194,21 @@ def viewreviews():
 @app.route("/edit/<review_id>", methods=["GET", "POST"])
 def edit(review_id):
     """
-    Allow user to edit a review
+    Allow user to edit their review
     """
+    if request.method == "POST":
+        
+        update = {
+            "title": request.form.get("title").title(),
+            "review": request.form.get("review"),
+            "rating": request.form.get("rating"),
+            "review_by": session["user"].title()
+        }
+        reviews = mongo.db.reviews.find()
+        mongo.db.reviews.update({"_id": ObjectId(review_id)}, update)
+        flash("Review Updated")
 
-    return render_template("viewreviews.html")
+    return render_template("edit.html", reviews=reviews)
 
 
 @app.route("/delete/<review_id>", methods=["GET", "POST"])
