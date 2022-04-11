@@ -8,6 +8,7 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+import datetime
 
 # check for env.py file
 if os.path.exists("env.py"):
@@ -135,12 +136,16 @@ def addbook():
     """
     Add a book to the database
     """
+
+    today = datetime.datetime.now()
+
     if request.method == "POST":
         book = {
             "image": request.form.get("image"),
             "title": request.form.get("title").title(),
             "author": request.form.get("author").title(),
             "genre": request.form.get("genre").title(),
+            "date": today
         }
         mongo.db.books.insert_one(book)
         flash("Book successfully added. Thanks!")
@@ -175,7 +180,7 @@ def browsebooks():
     """
     Allow user to view books on system
     """
-    books = mongo.db.books.find().sort("title", 1).limit(10)
+    books = mongo.db.books.find().sort("date", -1).limit(10)
     reviews = mongo.db.reviews.find()
     return render_template("books.html", books=books, reviews=list(reviews))
 

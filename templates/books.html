@@ -57,6 +57,7 @@
             </div>
             
             <!--Leave Reviews-->
+            {% if session['user'] %}
             <div class="card">
                 <div class="card-header">
                     <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo{{book._id}}">
@@ -102,6 +103,15 @@
                     </div>
                 </div>
             </div>
+            {% else %}
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo{{book._id}}">
+                        Please Log In To Leave a Review
+                    </a>
+                </div>
+            </div>
+            {% endif %}
             
         </div>
     </div>
