@@ -8,8 +8,7 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_avatars import Avatars
-from flask_gravatar import Gravatar
+
 
 
 # check for env.py file
@@ -17,7 +16,7 @@ if os.path.exists("env.py"):
     import env
 
 app = Flask(__name__)
-avatars = Avatars(app)
+
 
 # set configurations
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")

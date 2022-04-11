@@ -1,12 +1,11 @@
-avatars==0.1.1
+
 click==8.0.4
 dnspython==2.2.1
 Flask==2.0.3
-Flask-Avatars==0.2.2
-Flask-Gravatar==0.5.0
+
 Flask-PyMongo==2.3.0
 itsdangerous==2.1.1
-libgravatar==1.0.0
+
 Pillow==9.1.0
 pymongo==4.0.2
 Werkzeug==2.0.3
