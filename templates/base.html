@@ -19,25 +19,38 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <title>Next Book, Please</title>
     <!--NavBar-->
-    <nav class="navbar navbar-light bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand text-white" href="{{ url_for('home_page') }}">Next Book, Please</a>
-            <a class="navbar-brand text-white" href="{{ url_for('browsebooks') }}">Browse Books</a>
-            <!--if there is a user logged in they can see their profile from nav bar otherwise they will see log in-->
-            {% if session.user %}
-                <a class="navbar-brand text-white" href="{{ url_for('userprofile', username=session['user']) }}">Profile</a>
-            {% else %}
-                <a class="navbar-brand text-white" href="{{ url_for('login') }}">Login</a>
-            {% endif %}
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-dark" type="submit">Search</button>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <a class="navbar-brand text-white" href="{{ url_for('home_page') }}">Next Book, Please</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="navbar-brand text-white" href="{{ url_for('browsebooks') }}">Browse Books</a>
+                </li>
+                <li class="nav-item">
+                    <!--if there is a user logged in they can see their profile from nav bar otherwise they will see log in-->
+                    {% if session.user %}
+                    <a class="navbar-brand text-white"
+                        href="{{ url_for('userprofile', username=session['user']) }}">Profile</a>
+                    {% else %}
+                    <a class="navbar-brand text-white" href="{{ url_for('login') }}">Login</a>
+                    {% endif %}
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-dark my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
     </nav>
-</head>
+
 
 <body>
+    
     <!--Background image for all pages-->
     <img class="background" src="{{ url_for('static', filename='images/book.jpg') }}"
         alt="book with a torch light shining on it">
