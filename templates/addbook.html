@@ -1,8 +1,7 @@
 {% extends "base.html" %}
 {% block body %}
-
-<div class="card">
-    <div class="col-sm-6">
+<div class="row">
+    <div class="card edit-cards col-sm-6">
         <div class="card-header">
             <p class="titles"><b>Add New Book</b></h1>
         </div>
@@ -13,8 +12,9 @@
                     <!--Add important info about book added-->
                     <label for="image" class="form-label"><b>Image(enter URL):</b></label><br>
                     <!--Provide help to upload image -->
-                <a tabindex="0" class="btn btn-sm btn-dark help-buttons" role="button" data-toggle="popover" data-trigger="hover" 
-                title="Username Help" data-content="Search for your book, right click on the book cover image and select 'copy image address' then paste below.">?</a>
+                    <a tabindex="0" class="btn btn-sm btn-dark help-buttons" role="button" data-toggle="popover"
+                        data-trigger="hover" title="Username Help"
+                        data-content="Search for your book, right click on the book cover image and select 'copy image address' then paste below.">?</a>
                     <input type="text" name="image" class="form-control" id="image" placeholder="Enter image URL"
                         required><br>
                 </div>
@@ -42,6 +42,7 @@
         </div>
     </div>
 </div>
+
 
 
 {% endblock %}
