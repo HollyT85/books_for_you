@@ -95,7 +95,7 @@ a {
     
 }
 
-/* Display books on book pages */
+/*book page */
 
 .bookcover {
     width: 7rem;
@@ -116,6 +116,11 @@ a {
 
 .rating {
     padding: 1px;
+}
+
+.searchbar {
+    padding:1rem;
+    
 }
 
 /*Edit review page */
