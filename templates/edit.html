@@ -7,7 +7,7 @@
     <div class="card col-12 edit-cards">
         <form method="POST" action="{{ url_for('edit', review_id=review._id) }}">
             <div class="row">
-                <label for="title" class="form-label padding"><b>Title:</b></label><br>
+                <label for="title" class="form-label padding"><b>Book Title:</b></label><br>
                 <input type="text" name="title" class="form-control padding" id="id" value="{{ review.title }}"> <br>
             </div>
             <div class="row">

@@ -18,14 +18,6 @@ if os.path.exists("env.py"):
 
 app = Flask(__name__)
 avatars = Avatars(app)
-gravatar = Gravatar(app,
-                    size=100,
-                    rating='g',
-                    default='retro',
-                    force_default=False,
-                    force_lower=False,
-                    use_ssl=False,
-                    base_url=None)
 
 # set configurations
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
@@ -158,6 +150,7 @@ def addreview():
     if request.method == "POST":
 
         review = {
+            "reviewid": request.form.get("id"),
             "title": request.form.get("title").title(),
             "review": request.form.get("review"),
             "rating": request.form.get("rating"),
@@ -207,7 +200,7 @@ def edit(review_id):
         mongo.db.reviews.replace_one({"_id": ObjectId(review_id)}, update)
         flash("Review Updated")
         return redirect(url_for("userprofile", username=session['user']))
-    
+
     reviews = mongo.db.reviews.find()
     return render_template("edit.html", reviews=reviews)
 
