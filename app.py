@@ -165,7 +165,7 @@ def browsebooks():
     """
     Allow user to view books on system
     """
-    books = mongo.db.books.find().limit(10).sort("title", 1)
+    books = mongo.db.books.find().sort("title", 1)
     reviews = mongo.db.reviews.find()
     return render_template("books.html", books=books, reviews=list(reviews))
 
