@@ -20,6 +20,10 @@
     margin: 20px;
 }
 
+.help-buttons {
+    margin: 2px;
+}
+
 /*Background image for all pages*/
 .background {
     height: 100vh;

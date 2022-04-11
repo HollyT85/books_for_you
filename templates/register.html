@@ -9,12 +9,19 @@
         <!--check register function in python-->
         <form method="POST" action="{{ url_for('register') }}">
             <div class="row">
-                <label for="username" class="form-label">Username </label>
+                <label for="username" class="form-label">Username</label>
+                <!--Provide help to register - username -->
+                <a tabindex="0" class="btn btn-sm btn-dark help-buttons" role="button" data-toggle="popover" data-trigger="hover" 
+                title="Username Help" data-content="Must include: a capital letter, a number & be 6+ characters">?</a>
                 <input type="text" name="username" class="form-control" id="username" pattern="^[a-zA-Z0-9]{6,}$"
                     placeholder="Enter a username" required>
+                
             </div>
             <div class="row">
                 <label for="password" class="form-label">Password</label>
+                <!--Provide help to register - password -->
+                <a tabindex="0" class="btn btn-sm btn-dark help-buttons" role="button" data-toggle="popover" data-trigger="hover" 
+                    title="Password Help" data-content="Must include: a capital letter, a number & be 7+ characters">?</a>
                 <input type="password" name="password" class="form-control" id="password"
                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,}" placeholder="Enter Password" required>
             </div>
