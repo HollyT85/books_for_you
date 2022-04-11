@@ -16,7 +16,7 @@
                     <!--allow user to log out / add a book easily-->
                     <p> <b>Username:</b> {{ username | title }}</p>
                     <a href="{{ url_for('addbook') }}" class="btn btn-dark" type="submit">Add Book</a>
-                    <a href="{{ url_for('viewreviews') }}" class="btn btn-dark" type="submit">Your Reviews</a>
+                    <a href="{{ url_for('viewreviews') }}" class="btn btn-dark" type="submit">My Reviews</a>
                     <a href="{{ url_for('logout') }}" class="btn btn-dark">Logout</a>
                 </div>
             </div>
