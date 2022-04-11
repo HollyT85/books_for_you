@@ -35,6 +35,16 @@ def home_page():
     return render_template("index.html")
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    """
+    Allow user to search by author name / genre
+    """
+    query = request.form.get("query")
+    books = mongo.db.books.find({"$text": {"$search": query}})
+    return render_template("books.html", books=books)
+
+
 # register function
 @app.route("/register", methods=["GET", "POST"])
 def register():
