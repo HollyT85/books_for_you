@@ -8,7 +8,7 @@
         <form method="POST" action="{{ url_for('edit', review_id=review._id) }}">
             <div class="row">
                 <label for="title" class="form-label padding bold">Book Title:</label><br>
-                <input type="text" name="title" class="form-control padding" id="id" value="{{ review.title }}"> <br>
+                <input type="text" name="title" class="form-control padding" id="id" value="{{ review.title }}" readonly> <br>
             </div>
             <div class="row">
                 <label for="review" class="form-label padding bold">Review:</label><br>

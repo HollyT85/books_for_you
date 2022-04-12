@@ -134,7 +134,7 @@ def logout():
     """
     flash("You have been logged out")
     session.pop("user")
-    return render_template("index.html")
+    return redirect(url_for("home_page"))
 
 
 @app.route("/addbook", methods=["GET", "POST"])
