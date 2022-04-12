@@ -124,6 +124,18 @@ a {
     
 }
 
+/*star rating*/
+
+.star {
+    color: black;
+    font-size: 2rem;
+    cursor: pointer;
+    background-color: unset;
+    border: none;
+}
+
+
+
 /*Edit review page */
 
 .edit-cards {
@@ -133,3 +145,5 @@ a {
 .padding {
     padding: 5px;
 }
+
+

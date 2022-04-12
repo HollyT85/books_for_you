@@ -58,10 +58,16 @@ def register():
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("register"))
+        #check passwords match
+        password1 = request.form.get("password1")
+        password2 = request.form.get("password2")
+        if password1 != password2:
+            flash("Passwords do not match. Please try again.")
+            return redirect(url_for("register"))
         # save to mongo
         registration = {
             "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password"))
+            "password": generate_password_hash(request.form.get("password1"))
         }
         mongo.db.users.insert_one(registration)
 
@@ -140,6 +146,7 @@ def addbook():
     today = datetime.datetime.now()
 
     if request.method == "POST":
+
         book = {
             "image": request.form.get("image"),
             "title": request.form.get("title").title(),
@@ -147,11 +154,17 @@ def addbook():
             "genre": request.form.get("genre").title(),
             "date": today
         }
+
         mongo.db.books.insert_one(book)
         flash("Book successfully added. Thanks!")
         return redirect(url_for("browsebooks"))
 
     return render_template("addbook.html")
+
+
+@app.route("/rating")
+def rating():
+    return render_template("rating.html")
 
 
 @app.route("/addreview", methods=["GET", "POST"])
