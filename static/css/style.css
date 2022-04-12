@@ -6,6 +6,10 @@
     font-family: 'Montserrat Alternates', sans-serif;;
 }
 
+.heading {
+    font-size: 2rem;
+}
+
 .card {
     background-color: rgba(192, 192, 192, 0.8)
 }
@@ -59,11 +63,17 @@ a {
     width: 25rem;
 }
 
+.bold {
+    font-weight: bold;
+}
+
 /*flashed messages*/
 .messages {
     color: white;
-    text-align: center;
     padding: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.5rem;
 }
 
 /*heading styling*/

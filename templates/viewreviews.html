@@ -6,7 +6,7 @@
     <div class="col-12">
         <div class="card text-center">
             <div class="card-header">
-                <p class="titles"><b>Reviews you have left</b></p>
+                <p class="titles bold">Reviews you have left</p>
                 <a class="btn btn-dark" href="{{ url_for('userprofile', username=session['user']) }}">Back to Profile</a>
             </div>
             {% for review in reviews %}
@@ -18,7 +18,7 @@
                             <button class="btn btn-link" data-toggle="collapse"
                                 data-target="#collapseOne{{ review._id }}" aria-expanded="true"
                                 aria-controls="collapseOne">
-                                <p class="titles"> <b>{{ review.title }}</b></p>
+                                <p class="titles bold">{{ review.title }}</p>
                             </button>
                         </h5>
                     </div>
