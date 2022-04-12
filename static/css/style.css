@@ -55,6 +55,10 @@ a {
     color: black;
 }
 
+.registration-card {
+    width: 25rem;
+}
+
 /*flashed messages*/
 .messages {
     color: white;
