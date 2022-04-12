@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block body %}
 
+
+<div class="container-fluid">
 <div class="card cards">
     <div class="card-header">
         Register
@@ -15,18 +17,21 @@
                 title="Username Help" data-content="Must include: a capital letter, a number & be 6+ characters">?</a>
                 <input type="text" name="username" class="form-control" id="username" pattern="^[a-zA-Z0-9]{6,}$"
                     placeholder="Enter a username" required>
-                
             </div>
             <div class="row">
+                <!--Double password check-->
                 <label for="password1" class="form-label">Password</label>
                 <!--Provide help to register - password -->
                 <a tabindex="0" class="btn btn-sm btn-dark help-buttons" role="button" data-toggle="popover" data-trigger="hover" 
                     title="Password Help" data-content="Must include: a capital letter, a number & be 7+ characters">?</a>
                 <input type="password" name="password1" class="form-control" id="password1"
                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,}" placeholder="Enter Password" required>
-                <label for="password2" class="form-label">Password</label>
-                <input type="password" name="password2" class="form-control" id="password2"
-                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,}" placeholder="Re-Enter Password" required>
+                            <label for="password1" class="form-label">Password</label>
+                <!--Provide help to register - password -->
+                <a tabindex="0" class="btn btn-sm btn-dark help-buttons" role="button" data-toggle="popover" data-trigger="hover" 
+                    title="Password Help" data-content="Must include: a capital letter, a number & be 7+ characters">?</a>
+                <input type="password" name="password1" class="form-control" id="password1"
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,}" placeholder="Enter Password" required>
             </div>
             <div class="row">
                 <button type="submit" class="btn btn-dark form-button">Register</button>
@@ -35,6 +40,7 @@
         <!--Allow users to easily log in if they have an account already-->
         <p>Already have an account? <a class="link" href="{{ url_for('login') }}">Login</a></p>
     </div>
+</div>
 </div>
 
 
