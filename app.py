@@ -225,7 +225,7 @@ def edit(review_id):
 
         mongo.db.reviews.replace_one({"_id": ObjectId(review_id)}, update)
         flash("Review Updated")
-        return redirect(url_for("userprofile", username=session['user']))
+        return redirect(url_for("viewreviews"))
 
     reviews = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
     print(review_id)
