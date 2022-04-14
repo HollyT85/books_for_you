@@ -226,8 +226,9 @@ def edit(review_id):
         flash("Review Updated")
         return redirect(url_for("userprofile", username=session['user']))
 
-    reviews = mongo.db.reviews.find()
-    return render_template("edit.html", reviews=reviews)
+    reviews = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
+    print(review_id)
+    return render_template("edit.html", review=reviews)
 
 
 @app.route("/delete/<review_id>", methods=["GET", "POST"])

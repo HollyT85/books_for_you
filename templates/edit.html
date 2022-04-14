@@ -1,17 +1,18 @@
 {% extends "base.html" %}
 {% block body %}
 
-{% for review in reviews %}
-{% if review.review_by | title == session['user'] | title %}
+<!--Allow users to edit review-->
 <div class="row">
     <div class="card col-12 edit-cards">
         <form method="POST" action="{{ url_for('edit', review_id=review._id) }}">
             <div class="row">
                 <label for="title" class="form-label padding bold">Book Title:</label><br>
+                <!-- read only so db can get info but it can't be changed-->
                 <input type="text" name="title" class="form-control padding" id="id" value="{{ review.title }}" readonly> <br>
             </div>
             <div class="row">
                 <label for="review" class="form-label padding bold">Review:</label><br>
+                <!--Auto filled for user ease-->
                 <textarea name="review" class="form-control padding" id="review" required> {{ review.review }}</textarea><br>
             </div>
             <div class="row">
@@ -27,6 +28,5 @@
         </form>
     </div>
 </div>
-{% endif %}
-{% endfor %}
+
 {% endblock %}
