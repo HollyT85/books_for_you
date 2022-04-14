@@ -7,8 +7,10 @@
         <div class="card text-center">
             <div class="card-header">
                 <p class="titles bold">Reviews you have left</p>
+                <!--user to easily return to profile-->
                 <a class="btn btn-dark" href="{{ url_for('userprofile', username=session['user']) }}">Back to Profile</a>
             </div>
+            <!--only display reviews for the account logged in-->
             {% for review in reviews %}
             {% if review.review_by | title == session['user'] | title %}
             <div id="accordion{{ review._id }}">

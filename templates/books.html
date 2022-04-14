@@ -31,11 +31,11 @@
                         <!--ensure reviews for the correct books are displayed-->
                         {% for review in reviews %}
                         {% if book.title == review.title %}
-                        <div class="box">
-                            <p class="book-info"><b>Review:</b>{{ review.review }}</p>
-                            <p class="book-info"><b>Rating:</b>{{ review.rating }}</p>
-                            <p class="book-info"><b>Reviewed By:</b>{{ review.review_by | title }}</p>
-                        </div>
+                            <div class="box">
+                                <p class="book-info"><b>Review:</b>{{ review.review }}</p>
+                                <p class="book-info"><b>Rating:</b>{{ review.rating }}</p>
+                                <p class="book-info"><b>Reviewed By:</b>{{ review.review_by | title }}</p>
+                            </div>
                         {% endif %}
                         {% endfor %}
                     </div>
@@ -64,7 +64,7 @@
                                     required></textarea><br>
                             </div>
                             <div class="row">
-                                <input type="text" name="id" class="form-control" id="id" value="{{ book._id }}" hidden> <br>
+                                <input type="text" name="author1" class="form-control" id="author1" value="{{ book.author }}" hidden> <br>
                             </div>
                             <div class="row">
                                 <input type="text" name="title" class="form-control" id="title" value="{{ book.title }}" hidden> <br>

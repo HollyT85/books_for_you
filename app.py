@@ -43,7 +43,8 @@ def search():
     """
     query = request.form.get("query")
     books = mongo.db.books.find({"$text": {"$search": query}})
-    return render_template("books.html", books=books)
+    reviews = mongo.db.reviews.find()
+    return render_template("books.html", books=books, reviews=reviews)
 
 
 # register function
@@ -175,7 +176,7 @@ def addreview():
     if request.method == "POST":
 
         review = {
-            "reviewid": request.form.get("id"),
+            "author": request.form.get("author1"),
             "title": request.form.get("title").title(),
             "review": request.form.get("review"),
             "rating": request.form.get("rating"),
@@ -193,7 +194,7 @@ def browsebooks():
     """
     Allow user to view books on system
     """
-    books = mongo.db.books.find().sort("date", -1).limit(10)
+    books = mongo.db.books.find().sort("date", -1)
     reviews = mongo.db.reviews.find()
     return render_template("books.html", books=books, reviews=list(reviews))
 
