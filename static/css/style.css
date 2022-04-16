@@ -24,6 +24,10 @@
     margin: 20px;
 }
 
+.hover:hover {
+    color:#219ebc;
+}
+
 .help-buttons {
     margin: 2px;
 }
@@ -51,7 +55,7 @@
 }
 
 .btn:hover {
-    color:red;
+    color:#219ebc;
 }
 
 a {

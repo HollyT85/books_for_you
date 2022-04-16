@@ -196,6 +196,7 @@ def browsebooks():
     """
     books = mongo.db.books.find().sort("date", -1)
     reviews = mongo.db.reviews.find()
+
     return render_template("books.html", books=books, reviews=list(reviews))
 
 

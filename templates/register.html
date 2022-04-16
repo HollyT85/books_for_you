@@ -1,18 +1,11 @@
 {% extends "base.html" %}
 {% block body %}
 
-<div class="card cards registration-card">
-    <div class="card-header">
-        Register
-    </div>
-    <div class="card-body">
-        <!--check register function in python-->
-        
-        {% include 'components/registrationform.html' %}
+{% include 'components/registrationform.html' %}
 
-        <!--Allow users to easily log in if they have an account already-->
-        <p>Already have an account? <a class="link" href="{{ url_for('login') }}">Login</a></p>
-    </div>
+<!--Allow users to easily log in if they have an account already-->
+<p>Already have an account? <a class="link" href="{{ url_for('login') }}">Login</a></p>
+</div>
 </div>
 
 
