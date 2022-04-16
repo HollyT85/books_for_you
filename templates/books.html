@@ -3,12 +3,21 @@
 
 {% include 'components/searchbar.html' %}
 
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="javascript:void(0)">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="javascript:void(0)">1</a></li>
+        <li class="page-item"><a class="page-link" href="javascript:void(0)">Next</a></li>
+    </ul>
+</nav>
+
 {% for book in books %}
 
-<div class="row rows">
+
+<div class="row rows" id="loop">
     <div class="col-12">
         <!--book._id to make sure each book is it's own individual section-->
-        <div id="accordion{{book._id}}">
+        <div id="accordion{{book._id}}" class="books">
             <!--Book cover / title / author-->
             <div class="card">
                 <div class="card-body">
@@ -16,7 +25,6 @@
                     <p class="book-info"><b>Title:</b> {{ book.title | title }}</p><br>
                     <p class="book-info"><b>Author:</b> {{ book.author | title }}</p><br>
                     <p class="book-info"><b>Genre:</b> {{ book.genre | title }}</p><br>
-                    <p class="book-info"><b>Average Rating:</b></p><br>
                 </div>
             </div>
             <!--View Reviews which have been left-->
@@ -99,13 +107,6 @@
     </div>
 </div>
 
-
-
 {% endfor %}
-
-
-
-
-
 
 {% endblock %}

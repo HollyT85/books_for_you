@@ -44,7 +44,7 @@ def search():
     query = request.form.get("query")
     books = mongo.db.books.find({"$text": {"$search": query}})
     reviews = mongo.db.reviews.find()
-    return render_template("books.html", books=books, reviews=reviews)
+    return render_template("books.html", books=books, reviews=list(reviews))
 
 
 # register function
