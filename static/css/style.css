@@ -24,14 +24,26 @@
     margin: 20px;
 }
 
-.hover:hover {
-    color:#219ebc;
-}
-
 .help-buttons {
-    margin: 2px;
+    padding: 0.5rem;
+    margin: 3px 3px;
+    font-size: 10px;
+    align-items: center;
+    align-content: center;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color:#1655af;
+}
+
+.btn-link:hover {
+    text-decoration: black underline;
+}
 
 /*Background image for all pages*/
 .background {
@@ -50,21 +62,22 @@
 }
 
 .form-button {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin: 1rem 0.5rem;
+    padding: 0.5rem;
 }
 
 .btn:hover {
     color:#219ebc;
 }
 
-a {
-    text-decoration: none;
-    color: black;
-}
+
 
 .registration-card {
     width: 25rem;
+}
+
+.registration-card label {
+    padding-top: 0.5rem;
 }
 
 .bold {
@@ -139,7 +152,11 @@ a {
 
 .searchbar {
     padding:1rem;
-    
+}
+
+.searchbar input {
+    padding: 0.5rem;
+    margin: 1rem;
 }
 
 /*star rating*/

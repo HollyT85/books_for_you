@@ -5,12 +5,12 @@
     <div class="col-12 card">
         <form method="POST" action="{{ url_for('search') }}">
             <div class="row">
-                <div class="input-field searchbar">
+                <div class="input-field">
                     <input type="text" name="query" minlength="3" id="query" placeholder=" search by genre/author" required>
                 </div>
-                <div class="row searchbar">
-                    <button class="btn btn-dark help-buttons" type="submit">Search</button>
-                    <a href="{{ url_for('browsebooks') }}" class="btn btn-dark help-buttons" type="submit">Back to All Books</a>
+                <div class="row">
+                    <button class="btn btn-dark form-button" type="submit">Search</button>
+                    <a href="{{ url_for('browsebooks') }}" class="btn btn-dark form-button" type="submit">Back to All Books</a>
                 </div>
             </div>
         </form>
