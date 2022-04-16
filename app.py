@@ -59,7 +59,7 @@ def register():
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("register"))
-        #check passwords match
+        # check passwords match
         password1 = request.form.get("password1")
         password2 = request.form.get("password2")
         if password1 != password2:
@@ -163,11 +163,6 @@ def addbook():
     return render_template("addbook.html")
 
 
-@app.route("/rating")
-def rating():
-    return render_template("rating.html")
-
-
 @app.route("/addreview", methods=["GET", "POST"])
 def addreview():
     """
@@ -241,8 +236,6 @@ def delete(review_id):
     mongo.db.reviews.delete_one({"_id": ObjectId(review_id)})
     flash("Review removed")
     return redirect(url_for("userprofile", username=session['user']))
-
-    return render_template("userprofile.html")
 
 
 # custom error pages

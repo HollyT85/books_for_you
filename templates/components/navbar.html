@@ -19,13 +19,12 @@
                 {% if session.user %}
                 <a class="navbar-brand text-white"
                     href="{{ url_for('userprofile', username=session['user']) }}">Profile</a>
-                    <a class="navbar-brand text-white"
-                    href="{{ url_for('logout') }}">Logout</a>
+                <a class="navbar-brand text-white" href="{{ url_for('logout') }}">Logout</a>
                 {% else %}
                 <a class="navbar-brand text-white" href="{{ url_for('login') }}">Login</a>
                 {% endif %}
             </li>
         </ul>
-        
+
     </div>
 </nav>
