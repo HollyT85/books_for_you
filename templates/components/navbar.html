@@ -1,5 +1,9 @@
 <nav class="navbar navbar-expand-lg bg-dark">
+    {% if session.user %}
+    <a class="navbar-brand text-white heading disable" href="{{ url_for('home_page') }}">Next Book, Please</a>
+    {% else %}
     <a class="navbar-brand text-white heading" href="{{ url_for('home_page') }}">Next Book, Please</a>
+    {% endif %}
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

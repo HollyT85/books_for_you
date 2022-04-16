@@ -6,6 +6,10 @@
     font-family: 'Montserrat Alternates', sans-serif;;
 }
 
+.disable {
+    pointer-events: none;
+}
+
 .heading {
     font-size: 2rem;
 }
