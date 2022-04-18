@@ -10,26 +10,26 @@
             <form method="POST" action="{{ url_for('addbook') }}">
                 <div class="row">
                     <!--Add important info about book added-->
-                    <label for="image" class="form-label"><b>Image(enter URL):</b></label><br>
+                    <label for="image" class="form-label bold">Image(enter URL):</label><br>
                     <!--Provide help to upload image -->
-                    <a tabindex="0" class="btn btn-sm btn-dark help-buttons" role="button" data-toggle="popover"
+                    <a tabindex="0" class="btn btn-sm btn-dark help-buttons-add" role="button" data-toggle="popover"
                         data-trigger="hover" title="Username Help"
                         data-content="Search for your book, right click on the book cover image and select 'copy image address' then paste below.">?</a>
                     <input type="text" name="image" class="form-control" id="image" placeholder="Enter image URL"
                         required><br>
                 </div>
                 <div class="row">
-                    <label for="title" class="form-label"><b>Title:</b></label><br>
+                    <label for="title" class="form-label bold">Title:</label><br>
                     <input type="text" name="title" class="form-control" id="title" placeholder="Enter title"
                         required><br>
                 </div>
                 <div class="row">
-                    <label for="author" class="form-label"><b>Author:</b></label><br>
+                    <label for="author" class="form-label bold">Author:</label><br>
                     <input type="text" name="author" class="form-control" id="author" placeholder="Enter author"
                         required><br>
                 </div>
                 <div class="row">
-                    <label for="genre" class="form-label"><b>Genre:</b></label><br>
+                    <label for="genre" class="form-label bold">Genre:</label><br>
                     <input type="text" name="genre" class="form-control" id="genre" placeholder="Enter genre"
                         required><br>
                 </div>

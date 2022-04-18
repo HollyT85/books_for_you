@@ -30,7 +30,15 @@
 
 .help-buttons {
     padding: 0.5rem;
-    margin: 3px 3px;
+    margin: 3px;
+    font-size: 10px;
+    align-items: center;
+    align-content: center;
+}
+
+.help-buttons-add {
+    padding: 0.5rem;
+    margin: -3px 3px 3px 3px;
     font-size: 10px;
     align-items: center;
     align-content: center;
