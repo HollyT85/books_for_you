@@ -1,25 +1,26 @@
 {% extends "base.html" %}
 {% block body %}
 
+
 <!--Allow users to edit review-->
 <div class="row">
     <div class="card col-12 edit-cards">
         <form method="POST" action="{{ url_for('edit', review_id=review._id) }}">
-            <div class="row">
+            <div class="row card-header">
                 <label for="title" class="form-label padding bold">Book Title:</label><br>
                 <!-- read only so db can get info but it can't be changed-->
-                <input type="text" name="title" class="form-control padding" id="id" value="{{ review.title }}" readonly> <br>
+                <input type="text" name="title" class="form-control" id="id" value="{{ review.title }}" readonly> <br>
             </div>
-            <div class="row">
+            <div class="row card-body">
                 <label for="review" class="form-label padding bold">Review:</label><br>
                 <!--Auto filled for user ease-->
-                <textarea name="review" class="form-control padding" id="review" required> {{ review.review }}</textarea><br>
+                <textarea name="review" class="form-control" id="review" required> {{ review.review }}</textarea><br>
             </div>
-            <div class="row">
+            <div class="row card-body">
                 <p class="padding bold">Rating:</p>
                 
             </div>
-            <div class="row">
+            <div class="row card-body">
                 <div class="col">
                     <!--user can return to reviews-->
                     <a class="btn btn-dark" href="{{ url_for('viewreviews') }}">Back to Reviews</a>
