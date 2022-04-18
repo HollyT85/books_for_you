@@ -13,7 +13,6 @@
 
 {% for book in books %}
 
-
 <div class="row rows" id="loop">
     <div class="col-12">
         <!--book._id to make sure each book is it's own individual section-->
@@ -38,20 +37,22 @@
                     <div class="card-body">
                         <!--ensure reviews for the correct books are displayed by checking title and author-->
                         {% for review in reviews %}
-                            {% if book.title == review.title %}
-                                {% if book.author == review.author %}
-                                    <div class="box">
-                                        <p class="book-info"><b>Review:</b>{{ review.review }}</p>
-                                        <p class="book-info"><b>Rating:</b>{{ review.rating }}</p>
-                                        <p class="book-info"><b>Reviewed By:</b>{{ review.review_by | title }}</p>
-                                    </div>
-                                {% endif %}
-                            {% endif %}
+                        {% if (book.title == review.title) and (book.author == review.author) %}
+                        <div class="box">
+                            <p class="book-info"><b>Review:</b>{{ review.review }}</p>
+                            <p class="book-info"><b>Rating:</b>{{ review.rating }}</p>
+                            <p class="book-info"><b>Reviewed By:</b>{{ review.review_by | title }}</p>
+                        </div>
+                        {% else  %}
+                        {% if loop.index == 1 %}
+                        <p>No reviews yet</p>
+                        {% endif %}
+                        {% endif %}
                         {% endfor %}
                     </div>
                 </div>
             </div>
-            
+
             <!--Leave Reviews-->
             {% if session['user'] %}
             <div class="card">
@@ -74,21 +75,23 @@
                                     required></textarea><br>
                             </div>
                             <div class="row">
-                                <input type="text" name="author1" class="form-control" id="author1" value="{{ book.author }}" hidden> <br>
+                                <input type="text" name="author1" class="form-control" id="author1"
+                                    value="{{ book.author }}" hidden> <br>
                             </div>
                             <div class="row">
-                                <input type="text" name="title" class="form-control" id="title" value="{{ book.title }}" hidden> <br>
+                                <input type="text" name="title" class="form-control" id="title" value="{{ book.title }}"
+                                    hidden> <br>
                             </div>
-                            
+
                             <div class="row">
                                 <p class="bold">Rating:</p>
-                                
+
                             </div>
-                        <div class="row">
-                            <div class="col">
-                                <button class="btn btn-dark" type="submit">Add Review</button>
+                            <div class="row">
+                                <div class="col">
+                                    <button class="btn btn-dark" type="submit">Add Review</button>
+                                </div>
                             </div>
-                        </div>
                         </form>
                     </div>
                 </div>
@@ -102,7 +105,7 @@
                 </div>
             </div>
             {% endif %}
-            
+
         </div>
     </div>
 </div>
