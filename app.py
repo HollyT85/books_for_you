@@ -2,13 +2,14 @@
 Imports for functionality
 """
 import os
+import datetime
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
-import datetime
+
 
 # check for env.py file
 if os.path.exists("env.py"):
@@ -92,13 +93,12 @@ def login():
 
         if existing_user:
             # check password matches, if it does, log in
-            if check_password_hash(existing_user["password"],
-                request.form.get("password")):
+            if check_password_hash(
+                existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                flash("Welcome, {}".format(
-                    request.form.get("username")))
-                return redirect(url_for(
-                    "userprofile", username=session["user"]))
+                flash("Welcome, {}".format(request.form.get("username")))
+                return redirect(
+                    url_for("userprofile", username=session["user"]))
 
             else:
                 # username / password incorrect

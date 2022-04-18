@@ -37,17 +37,20 @@
                     <div class="card-body">
                         <!--ensure reviews for the correct books are displayed by checking title and author-->
                         {% for review in reviews %}
-                        {% if (book.title == review.title) and (book.author == review.author) %}
-                        <div class="box">
-                            <p class="book-info"><b>Review:</b>{{ review.review }}</p>
-                            <p class="book-info"><b>Rating:</b>{{ review.rating }}</p>
-                            <p class="book-info"><b>Reviewed By:</b>{{ review.review_by | title }}</p>
-                        </div>
-                        {% else  %}
-                        {% if loop.index == 1 %}
-                        <p>No reviews yet</p>
-                        {% endif %}
-                        {% endif %}
+                        
+                            {% if (book.title == review.title) and (book.author == review.author) %}
+                            
+                                <div class="box">
+                                    <p class="book-info"><b>Review:</b>{{ review.review }}</p>
+                                    <p class="book-info"><b>Rating:</b>{{ review.rating }}</p>
+                                    <p class="book-info"><b>Reviewed By:</b>{{ review.review_by | title }}</p>
+                                </div>
+                            {% else %}
+                                
+                                    <p>No reviews yet</p>
+                                
+                            {% endif %}
+                        
                         {% endfor %}
                     </div>
                 </div>
