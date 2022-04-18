@@ -35,7 +35,10 @@
                         </div>
                     </div>
                 </div>
-
+                {% else %}
+                    {% if loop.index == 1 %}
+                    <p class="bold padding"> You have not left any reviews yet. <br> Why not leave one now?</p>
+                    {% endif %}
                 {% endif %}
                 {% endfor %}
             </div>
