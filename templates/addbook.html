@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+<!--Create element of CRUD-->
 {% block body %}
 <div class="row">
     <div class="card edit-cards col-sm-6">
@@ -9,7 +10,7 @@
         <div class="card-body">
             <form method="POST" action="{{ url_for('addbook') }}">
                 <div class="row">
-                    <!--Add important info about book added-->
+                    <!--Add important info about book-->
                     <label for="image" class="form-label bold">Image(enter URL):</label><br>
                     <!--Provide help to upload image -->
                     <a tabindex="0" class="btn btn-sm btn-dark help-buttons-add" role="button" data-toggle="popover"
@@ -42,7 +43,5 @@
         </div>
     </div>
 </div>
-
-
 
 {% endblock %}

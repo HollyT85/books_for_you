@@ -1,37 +1,42 @@
 {% extends "base.html" %}
 {% block body %}
-
+<!--Read elemet of CRUD-->
+<!--view reviews a user has left-->
 <div class="row text-center">
     <div class="card edit-cards col-lg-12">
         <div class="card-header">
             <div class="titles bold padding">Reviews You Have Left</div>
+            <!--Allow user to return to profile if they clicked by mistake/change their mind-->
             <a class="btn btn-dark" href="{{ url_for('userprofile', username=session['user']) }}">Back to Profile</a>
         </div>
         <div class="card-body">
+            <!--Ensure only reviews by the session user are displayed-->
             {% for review in reviews %}
-                {% if review.review_by | title == session ['user']|title %}
-                    <div id="accordion{{ review._id }}">
-                        <div class="card-header" id="headingOne">
-                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne{{ review._id }}" aria-expanded="true" aria-controls="collapseOne">
-                                <div class="titles bold">{{ review.title }}</div>
-                            </button>
-                        </div>
-                    </div>
-                    <div id="collapseOne{{ review._id }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion{{ review._id }}">
-                        <p>{{  review.review }} </p>
-                        <a href="{{ url_for('edit', review_id=review._id) }}" class="btn btn-dark margin" type="submit">Edit</a>
-                        <a href="{{ url_for('delete', review_id=review._id) }}" class="btn btn-dark margin" type="submit">Delete</a>
-                    </div>
-                    {% else %}
-                        {% if review.index == 1 %}
-                            <div class="bold padding">You have not left any reviews.<br>Why not leave one now?</div>
-                        {% endif %}
-                {% endif %}
+            {% if review.review_by | title == session ['user']|title %}
+            <div id="accordion{{ review._id }}">
+                <div class="card-header" id="headingOne">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne{{ review._id }}"
+                        aria-expanded="true" aria-controls="collapseOne">
+                        <div class="titles bold">{{ review.title }}</div>
+                    </button>
+                </div>
+            </div>
+            <div id="collapseOne{{ review._id }}" class="collapse" aria-labelledby="headingOne"
+                data-parent="#accordion{{ review._id }}">
+                <p>{{  review.review }} </p>
+                <a href="{{ url_for('edit', review_id=review._id) }}" class="btn btn-dark margin" type="submit">Edit</a>
+                <a href="{{ url_for('delete', review_id=review._id) }}" class="btn btn-dark margin"
+                    type="submit">Delete</a>
+            </div>
+            <!--If user hasn't left any reviews, let them know-->
+            {% else %}
+            {% if review.index == 1 %}
+            <div class="bold padding">You have not left any reviews.<br>Why not leave one now?</div>
+            {% endif %}
+            {% endif %}
             {% endfor %}
         </div>
-
     </div>
 </div>
-
 
 {% endblock %}
