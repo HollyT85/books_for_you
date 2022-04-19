@@ -147,7 +147,12 @@ def addbook():
     today = datetime.datetime.now()
 
     if request.method == "POST":
-
+        # find title and author
+        aut_title = {
+            "title": request.form.get("title").title(),
+            "author": request.form.get("author").title()
+        }
+        # find all book details
         book = {
             "image": request.form.get("image"),
             "title": request.form.get("title").title(),
@@ -156,10 +161,20 @@ def addbook():
             "date": today
         }
 
-        mongo.db.books.insert_one(book)
+        # check if book exists by checking title and author together
+        existing_book = mongo.db.books.find_one(aut_title)
 
-        flash("Book successfully added. Thanks!")
-        return redirect(url_for("browsebooks"))
+        # if it exists tell user the book is already in the DB
+        if existing_book:
+            flash("This book already exists.")
+
+        # If it doesn't exist, add the book
+        else:
+
+            mongo.db.books.insert_one(book)
+
+            flash("Book successfully added. Thanks!")
+            return redirect(url_for("browsebooks"))
 
     return render_template("addbook.html")
 
