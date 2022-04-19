@@ -134,7 +134,7 @@ def addbook():
     Add a book to the database
     """
 
-    #so books can be displayed by most recent
+    # so books can be displayed by most recent
     today = datetime.datetime.now()
 
     if request.method == "POST":
@@ -212,7 +212,8 @@ def browsebooks():
     books = mongo.db.books.find().sort("date", -1)
     reviews = mongo.db.reviews.find()
 
-    return render_template("books.html", books=list(books), reviews=list(reviews))
+    return render_template(
+        "books.html", books=list(books), reviews=list(reviews))
 
 
 @app.route("/viewreviews")
@@ -220,7 +221,7 @@ def viewreviews():
     """
     Allow user to see own reviews
     """
-    # user reviews 
+    # find all reviews then filtered with jinja
     reviews = mongo.db.reviews.find()
 
     return render_template("viewreviews.html", reviews=list(reviews))
