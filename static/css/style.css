@@ -10,6 +10,13 @@
     pointer-events: none;
 }
 
+.pagination {
+    background-color: white;
+}
+
+.margin {
+    margin-bottom: 10px;
+}
 .heading {
     font-size: 2rem;
 }
