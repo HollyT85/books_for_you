@@ -1,12 +1,17 @@
 {% extends "base.html" %}
 {% block body %}
 
+<div class="card cards">
+    <div class="card-header bold">
+        Login
+    </div>
+    <div class="card-body">
 
 {% include 'components/loginform.html' %}
 
 <!--Allow users to easily navigate to register if they aren't already-->
-<p>Don't have an account? <a class="link" href="{{ url_for('register') }}">Register</a></p>
-</div>
+        <p>Don't have an account? <a class="link" href="{{ url_for('register') }}">Register</a></p>
+    </div>
 </div>
 
 

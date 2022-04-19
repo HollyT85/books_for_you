@@ -1,11 +1,17 @@
 {% extends "base.html" %}
 {% block body %}
 
-{% include 'components/registrationform.html' %}
+<div class="card cards registration-card">
+    <div class="card-header bold">
+        Register
+    </div>
+    <div class="card-body">
 
-<!--Allow users to easily log in if they have an account already-->
-<p>Already have an account? <a class="link" href="{{ url_for('login') }}">Login</a></p>
-</div>
+        {% include 'components/registrationform.html' %}
+
+        <!--Allow users to easily log in if they have an account already-->
+        <p>Already have an account? <a class="link" href="{{ url_for('login') }}">Login</a></p>
+    </div>
 </div>
 
 
