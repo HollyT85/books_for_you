@@ -62,6 +62,13 @@ Users are required to enter their username and password; if they don't they are 
 
 If the username or password are incorrect, a message is displayed; for security purposes it does not say which one is incorrect.
 
+<b><u>User Profile</u></b>
+
+![profile](static/images/readme/userprofile.png)
+
+The user profile is a simple card with the users username on. The picture is randomly created; something the test group liked as a bit of fun. From the profile, a user can add a book, view their reviews and logout.
+
+You can also see here, the different navbar when a user is logged in; they can easily access their profile and logout from there.
 
 <u><b>Browse Books</b></u>
 
