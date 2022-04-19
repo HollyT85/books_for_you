@@ -1,5 +1,14 @@
 {% extends "base.html" %}
 {% block body %}
-<h1>Oops! Click <a href="{{ url_for('home_page') }}">here</a> to return home</h1>
 
+<!--allow user to easily navigate back home-->
+<!--if logged in, redirect to profile page-->
+{% if session.user %}
+    <h1 class="messages text-center">Oops! Something's gone wrong!<br>Click <a class="text-white bold"
+        href="{{ url_for('userprofile', username=session['user']) }}">here</a> to return to your profile page!</h1>
+<!--if not logged in, redirect to login page-->
+{% else %}
+    <h1 class="messages text-center">Oops! Something's gone wrong!<br>Click <a class="text-white bold"
+        href="{{ url_for('home_page') }}">here</a> to return to the login page!</h1>
+{% endif %}
 {% endblock %}
