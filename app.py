@@ -37,17 +37,6 @@ def home_page():
     return render_template("index.html")
 
 
-@app.route("/search", methods=["GET", "POST"])
-def search():
-    """
-    Allow user to search by author name / genre
-    """
-    query = request.form.get("query")
-    books = mongo.db.books.find({"$text": {"$search": query}})
-    reviews = mongo.db.reviews.find()
-    return render_template("books.html", books=books, reviews=list(reviews))
-
-
 # register function
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -106,7 +95,7 @@ def login():
                 return redirect(url_for("login"))
 
         else:
-            # username doesn't exist
+            # username / password incorrect
             flash("Username/Password incorrect. Please try again.")
             return redirect(url_for("login"))
 
@@ -121,6 +110,7 @@ def userprofile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
+    # let user go to profile page
     if session["user"]:
         return render_template(
             "userprofile.html", username=username)
@@ -144,6 +134,7 @@ def addbook():
     Add a book to the database
     """
 
+    #so books can be displayed by most recent
     today = datetime.datetime.now()
 
     if request.method == "POST":
@@ -185,7 +176,7 @@ def addreview():
     Allow user to leave a review
     """
     if request.method == "POST":
-
+        # get review details to add to DB
         review = {
             "author": request.form.get("author1"),
             "title": request.form.get("title").title(),
@@ -200,11 +191,24 @@ def addreview():
     return render_template("addreview.html")
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    """
+    Allow user to search by author name / genre
+    """
+    # get query, find it in DB
+    query = request.form.get("query")
+    books = mongo.db.books.find({"$text": {"$search": query}})
+    reviews = mongo.db.reviews.find()
+    return render_template("books.html", books=books, reviews=list(reviews))
+
+
 @app.route("/books")
 def browsebooks():
     """
     Allow user to view books on system
     """
+    # view books by most recent
     books = mongo.db.books.find().sort("date", -1)
     reviews = mongo.db.reviews.find()
 
@@ -216,6 +220,7 @@ def viewreviews():
     """
     Allow user to see own reviews
     """
+    # user reviews 
     reviews = mongo.db.reviews.find()
 
     return render_template("viewreviews.html", reviews=list(reviews))
@@ -227,7 +232,7 @@ def edit(review_id):
     Allow user to edit their review
     """
     if request.method == "POST":
-
+        # allow users to update a record
         update = {
             "title": request.form.get("title").title(),
             "review": request.form.get("review"),
@@ -249,6 +254,7 @@ def delete(review_id):
     """
     Allow user to delete a review
     """
+    # find review
     mongo.db.reviews.delete_one({"_id": ObjectId(review_id)})
     flash("Review removed")
     return redirect(url_for("userprofile", username=session['user']))
