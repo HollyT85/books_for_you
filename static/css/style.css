@@ -1,4 +1,4 @@
-/*Multi-page styling*/
+/*Default*/
 *{
     padding: 0;
     margin: 0;
@@ -6,20 +6,38 @@
     font-family: 'Montserrat Alternates', sans-serif;;
 }
 
-.disable {
-    pointer-events: none;
+/*Image styling*/
+.background {
+    height: 100vh;
+    width: 100vw;
+    position:fixed;
 }
 
+.prof-pic {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    float: left;
+    margin-right: 2rem;
+    border: black solid 1px;
+}
+
+.bookcover {
+    width: 7rem;
+    height:10rem;
+    margin-right: 1rem;
+    border: 2px black solid;
+    float: left;
+}
+
+/*Styling Elements such as padding etc*/
 
 .margin {
     margin-bottom: 10px;
 }
-.heading {
-    font-size: 2rem;
-}
 
-.card {
-    background-color: rgba(192, 192, 192, 0.8)
+.padding {
+    padding: 1rem;
 }
 
 .box {
@@ -28,9 +46,73 @@
     margin: 1px;
 }
 
-.spacing {
-    margin: 20px;
+.searchbar {
+    padding:1rem;
 }
+
+.searchbar input {
+    padding: 0.5rem;
+    margin: 1rem;
+}
+
+.rows {
+    margin: 2rem;
+}
+
+/*Cards*/
+.card {
+    background-color: rgba(192, 192, 192, 0.8)
+}
+
+.cards {
+    position: absolute;
+    float: left;
+    padding: 10px;
+    margin: 2rem;
+    background-color: rgba(192, 192, 192, 0.8);
+}
+
+.registration-card {
+    width: 25rem;
+}
+
+.registration-card label {
+    padding-top: 0.5rem;
+}
+
+.edit-cards {
+    margin: 2rem
+}
+
+.book-info {
+    position:relative;
+    margin: 0;
+}
+
+/*text styling*/
+
+.heading {
+    font-size: 2rem;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.messages {
+    color: white;
+    padding: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.5rem;
+}
+
+.titles {
+    color: black;
+    text-align: center;
+}
+
+/*Buttons and links*/
 
 .help-buttons {
     padding: 0.5rem;
@@ -61,22 +143,6 @@ a:hover {
     text-decoration: black underline;
 }
 
-/*Background image for all pages*/
-.background {
-    height: 100vh;
-    width: 100vw;
-    position:fixed;
-}
-
-/*home page, login and registration cards*/
-.cards {
-    position: absolute;
-    float: left;
-    padding: 10px;
-    margin: 2rem;
-    background-color: rgba(192, 192, 192, 0.8);
-}
-
 .form-button {
     margin: 1rem 0.5rem;
     padding: 0.5rem;
@@ -86,115 +152,7 @@ a:hover {
     color:#219ebc;
 }
 
-
-
-.registration-card {
-    width: 25rem;
+/*Disable element*/
+.disable {
+    pointer-events: none;
 }
-
-.registration-card label {
-    padding-top: 0.5rem;
-}
-
-.bold {
-    font-weight: bold;
-}
-
-/*flashed messages*/
-.messages {
-    color: white;
-    padding: 1rem;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 1.5rem;
-}
-
-/*heading styling*/
-.titles {
-    color: black;
-    text-align: center;
-}
-
-/*userprofile page*/
-.profile {
-    margin-top: 2rem;
-}
-
-.user-info {
-    list-style-type: none;
-    text-align: left;
-    padding: 2rem;
-}
-
-.prof-pic {
-    width: 8rem;
-    height: 8rem;
-    border-radius: 50%;
-    float: left;
-    margin-right: 2rem;
-    border: black solid 1px;
-}
-
-/*review page*/
-
-.bookpic {
-    width: 15rem;
-    height: 18rem;
-    
-}
-
-/*book page */
-
-.bookcover {
-    width: 7rem;
-    height:10rem;
-    margin-right: 1rem;
-    border: 2px black solid;
-    float: left;
-}
-
-.book-info {
-    position:relative;
-    margin: 0;
-}
-
-.rows {
-    margin: 2rem;
-}
-
-.rating {
-    padding: 1px;
-}
-
-.searchbar {
-    padding:1rem;
-}
-
-.searchbar input {
-    padding: 0.5rem;
-    margin: 1rem;
-}
-
-/*star rating*/
-
-.star {
-    color: black;
-    font-size: 2rem;
-    cursor: pointer;
-    background-color: unset;
-    border: none;
-}
-
-/*Edit review page */
-
-.edit-cards {
-    margin: 2rem
-}
-
-
-
-.padding {
-    padding: 1rem;
-}
-
-
