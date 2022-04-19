@@ -157,6 +157,7 @@ def addbook():
         }
 
         mongo.db.books.insert_one(book)
+
         flash("Book successfully added. Thanks!")
         return redirect(url_for("browsebooks"))
 

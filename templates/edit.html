@@ -12,23 +12,23 @@
                 <input type="text" name="title" class="form-control" id="id" value="{{ review.title }}" readonly> <br>
             </div>
             <div class="card-body">
-            <div class="row">
-                <label for="review" class="form-label padding bold">Review:</label><br>
-                <!--Auto filled for user ease-->
-                <textarea name="review" class="form-control" id="review" required> {{ review.review }}</textarea><br>
-            </div>
-            <div class="row">
-                <p class="padding bold">Rating:</p>
-                
-            </div>
-            <div class="row">
-                <div class="col">
-                    <!--user can return to reviews-->
-                    <a class="btn btn-dark" href="{{ url_for('viewreviews') }}">Back to Reviews</a>
-                    <button class="btn btn-dark" type="submit">Save</button>
+                <div class="row">
+                    <label for="review" class="form-label padding bold">Review:</label><br>
+                    <!--Auto filled for user ease-->
+                    <textarea name="review" class="form-control" id="review"
+                        required> {{ review.review }}</textarea><br>
+                </div>
+                <div class="row">
+                    <p class="padding bold">Rating:</p>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <!--user can return to reviews-->
+                        <a class="btn btn-dark" href="{{ url_for('viewreviews') }}">Back to Reviews</a>
+                        <button class="btn btn-dark" type="submit">Save</button>
+                    </div>
                 </div>
             </div>
-        </div>
         </form>
     </div>
 </div>
