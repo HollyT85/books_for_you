@@ -140,7 +140,7 @@ My Wireframes were created on [GIMP](https://www.gimp.org/). Other than the nav 
 
 ![wireframe](static/images/readme/myreviews.jpg)
 
-<b><u>USer Stories</u></b>
+<b><u>User Stories</u></b>
 
 As a reader, I want somewhere to leave reviews.
 
