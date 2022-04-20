@@ -233,6 +233,8 @@ This site has been created using HTML, CSS, JS & Python.
 
 [GTMetrix](https://gtmetrix.com/) to check site speed.
 
+[FontAwesome](https://fontawesome.com/) for the icon.
+
 [W3C](https://www.w3.org/) for code validation.
 
 [AmIResponsive](http://ami.responsivedesign.is/#) to check responsivity of the site.
