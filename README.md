@@ -106,7 +106,7 @@ Users can also return to their reviews if they pressed the wrong book.
 
 ![browsebooks](static/images/readme/goodreview.png)
 
-The browse books page again, is easily navigable with all items available on this page. As you can see, users who are not logged in cannot leave a review but can easily access the log in page, but those who are, can. There is also a pop-out helping readers understand what makes a good review.
+The browse books page again, is easily navigable with all items available on this page. As you can see, users who are not logged in cannot leave a review but can easily access the log in page, but those who are, can. There is also a pop-out helping readers understand what makes a good review. There is also a link to a generic amazon page for books; this would book hooked up to the actual book.
 
 ![browsebooks](static/images/readme/viewreview.png)
 
@@ -140,8 +140,28 @@ My Wireframes were created on [GIMP](https://www.gimp.org/). Other than the nav 
 
 ![wireframe](static/images/readme/myreviews.jpg)
 
+<b><u>USer Stories</u></b>
 
+As a reader, I want somewhere to leave reviews.
 
+![userstory](static/images/readme/userstory1.png)
+
+As a reader, I want to easily be able to see reviews about books I might be interested in.
+As a reader, I don't want to see all information about a book in one place.
+
+![userstory](static/images/readme/userstory2.png)
+
+As a reader, I want to be able to search by my favourite genre or author.
+
+![userstory](static/images/readme/userstory3.png)
+
+As a reader, I want to be able to edit and delete reviews I leave in case I make typing errors/change my mind about a book.
+
+![userstory](static/images/readme/userstory4.png)
+
+As a reader, I'd like to have a link to where I can buy a book I am interested in. 
+
+![userstory](static/images/readme/userstory5.png)
 <u><b>Next steps</b></u>
 
 
