@@ -86,7 +86,7 @@ If a book already exists in the DB, users are informed. If it doesn't, they're i
 
 ![myreviews](static/images/readme/myreviews.png)
 
-In this area, users can see a quick overview of reviews they have left; these are in collapsible formats as on the browse books page for consistency. Users can easily return to their profile if they clicked 'My Reviews' by accident. When they un-collapse a book, they can see the options to edit and delete their reviews.
+In this area, users can see a quick overview of reviews they have left; these are in collapsible formats as on the browse books page for consistency. Users can easily return to their profile if they clicked 'My Reviews' by accident. When they expand a book, they can see the options to edit and delete their reviews.
 
 <b><u>Edit</u></b>
 
@@ -112,7 +112,7 @@ The browse books page again, is easily navigable with all items available on thi
 
 ![browsebooks](static/images/readme/addreview.png)
 
-The view review and add review (when logged in), both collapse and un-collapse easily with a click. For the add review, the user is not required to input anything other than their review and rating and then press submit.
+The view review and add review (when logged in), both collapse and expand easily with a click. For the add review, the user is not required to input anything other than their review and rating and then press submit.
 
 <b><u>Log Out</u></b>
 
@@ -208,6 +208,12 @@ The site has been deployed and is available to view [here](https://next-book-ple
 Due to the change in criteria close to the end of the project, we have been advised to show how our site would work in a relational database model. This can be viewed below.
 
 <b><u>Issues and Bugs</u></b>
+
+One of the bigger issues I have encountered was using the accordion system to display books, reviews and the ability to add reviews. Initially it was because I had styled all 'card' elemements the same way, once I had changed this, I couldn't get the cards to open individually; if one was clicked, they all expanded. I resolved this by adding {{ book._id }} to each accordion section so the code realised each new book was it's own individual thing.
+
+When I was trying to ensure duplicate books could not be use, I had difficulty getting the coding to work as I was trying to code it the same way as checking a username; this resulted in either all books being able to added (even if they were duplicates) or no book being able to be added (even if they weren't duplicates). I realised this was not the correct way and I managed to get it funcitoning by pulling out just the author and title and then checking for those.
+
+I initially had problems with getting reviews to display for all books; they were only displaying for the first book; this was because, in the Python, the reviews were not being compiled as lists so iteration was being stopped after the first round. Once I had changed reviews to a list, this fixed the problem.
 
 <b><u>Technology, Languages and Tools</u></b>
 
