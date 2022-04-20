@@ -6,10 +6,11 @@
 
 {% for book in books %}
 
+<div id="loop">
 <div class="row rows">
     <div class="col-12">
         <!--book._id to make sure each book has it's own individual section-->
-        <div id="accordion{{book._id}}">
+        <div id="accordion{{book._id}}" class="books">
             <!--Book cover / title / author displayed immediately to user-->
             <div class="card">
                 <div class="card-body">
@@ -34,7 +35,7 @@
                         {% if (book.title == review.title) and (book.author == review.author) %}
                         <div class="box">
                             <p class="book-info"><b>Review:</b>{{ review.review }}</p>
-                            <p class="book-info"><b>Rating:</b>{{ review.rating }}</p>
+                            <p class="book-info"><b>Rating:</b>{{ review.rating }} out of 5</p>
                             <p class="book-info"><b>Reviewed By:</b>{{ review.review_by | title }}</p>
                         </div>
                         {% endif %}
@@ -73,7 +74,9 @@
                                     hidden> <br>
                             </div>
                             <div class="row">
-                                <p class="bold">Rating:</p>
+                                <label for="rating" class="form-label bold">Rating</label>
+                                <input type="number" name="rating" class="form-control" id="ratinginput"
+                                    min="1" max="5" placeholder="Rating out of 5" required>
                             </div>
                             <div class="row">
                                 <div class="col">
@@ -88,7 +91,7 @@
             {% else %}
             <div class="card">
                 <div class="card-header bold">
-                    <p class="collapsed card-link" data-toggle="collapse">
+                    <p>
                         Please <a href="{{ url_for('login') }}">Log In</a> To Leave a Review
                     </p>
                 </div>
@@ -96,6 +99,7 @@
             {% endif %}
         </div>
     </div>
+</div>
 </div>
 {% endfor %}
 
