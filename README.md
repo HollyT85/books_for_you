@@ -162,7 +162,9 @@ As a reader, I want to be able to edit and delete reviews I leave in case I make
 As a reader, I'd like to have a link to where I can buy a book I am interested in. 
 
 ![userstory](static/images/readme/userstory5.png)
+
 <u><b>Next steps</b></u>
 
+To improve the site, the links to purchase would be accurate. There would also be pagination and a more interactive rating system.
 
 [NitinArya](https://www.pexels.com/photo/photography-of-book-page-1029141/) for the background image
