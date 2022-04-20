@@ -24,6 +24,8 @@ When it came to adding a book, for the purposes of this project, I have asked us
 
 As an avid reader, I knew what I would look for in a review site however, I researched with other book readers what they would like to see. The overwhelming majority said they'd like it simple if they were adding a book with the only information being required being: image, title, author, genre. They also said they would like to see everything related to the books in one page (e.g. the book, the reviews and the ability to add a review) for ease of navigation; they did not want to have to go to many different pages to do what the site was intended; this is the reason for the layout. The only exception to this is the add book function which is only accessible from the user profile.
 
+The final design and accessibility of all features has been checked by my test group who all said it was easy to navigate and the areas where they had struggled initially, were now clearly labelled with help.
+
 <u><b>Home Page</b></u>
 
 ![homepage](static/images/readme/homepage.png)
@@ -86,7 +88,11 @@ If a book already exists in the DB, users are informed. If it doesn't, they're i
 
 ![myreviews](static/images/readme/myreviews.png)
 
+![myreviews](static/images/readme/noreview.png)
+
 In this area, users can see a quick overview of reviews they have left; these are in collapsible formats as on the browse books page for consistency. Users can easily return to their profile if they clicked 'My Reviews' by accident. When they expand a book, they can see the options to edit and delete their reviews.
+
+If a user has not left any reviews yet, they are informed as such.
 
 <b><u>Edit</u></b>
 
