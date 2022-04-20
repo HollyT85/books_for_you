@@ -191,6 +191,10 @@ My CSS code passed checks at [W3C](https://jigsaw.w3.org/css-validator/validator
 
 <i>JS Validator</i>
 
+![js](static/images/readme/js.jpg)
+
+My JS code is taken from Bootstrap but it passed checks at [JSHint](https://jshint.com/).
+
 <i>HTML Validation</i>
 
 <b><u>Deployment</u></b>
@@ -205,8 +209,32 @@ Due to the change in criteria close to the end of the project, we have been advi
 
 <b><u>Technology, Languages and Tools</u></b>
 
+This site has been created using HTML, CSS, JS & Python.
+
+[GitHub](https://github.com/) for buiding the webpage.
+
+[Heroku](https://www.heroku.com/) for webpage deployment.
+
+[MongoDB](https://www.mongodb.com) to create the database.
+
+[GoogleFonts](https://fonts.google.com/) for the fonts used in the project.
+
+[GIMPSoftware](https://www.gimp.org/) to edit photos and create wireframes.
+
+[GTMetrix](https://gtmetrix.com/) to check site speed.
+
+[W3C](https://www.w3.org/) for code validation.
+
+[AmIResponsive](http://ami.responsivedesign.is/#) to check responsivity of the site.
+
+[JSHint](https://jshint.com/) to check JavaScript code.
+
+[a11y](https://color.a11y.com/Contrast/) to check accessibility of colours.
+
 <b><u>Media</u></b>
 
 [NitinArya](https://www.pexels.com/photo/photography-of-book-page-1029141/) for the background image
 
 <b><u>Acknowledgements</u></b>
+
+With special thanks to Richard Wells for being a fabulous mentor.
