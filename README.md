@@ -169,16 +169,33 @@ To improve the site, the links to purchase would be accurate. There would also b
 
 <b><u>Testing and Validation</u></b>
 
+<i>Speed Test</i>
+
 ![speedtest](static/images/readme/speedtest.jpg)
 
 ![speedtest](static/images/readme/speedtest1.jpg)
 
 When I ran my site through [GTMetrix](https://gtmetrix.com/), I tested both the home page and the browse book page (due to the number of images on there). Initially both came back as a B rating due to the size of the background image; after a couple of tries, I managed to reduce this in size, without reducing quality, to achieve an a rating on both pages.
 
+<i>Colour Contrast Check for Accessibility</i>
+
 ![colorcheck](static/images/readme/color.jpg)
 
 As all pages have the same colour scheme, I just checked the main page on the [a11y](https://color.a11y.com/Contrast/)check and it passed accessibility.
 
+<i>CSS Validator</i>
+
+![css](static/images/readme/css.jpg)
+
+My CSS code passed checks at [W3C](https://jigsaw.w3.org/css-validator/validator)
+
+<i>JS Validator</i>
+
+<i>HTML Validation</i>
+
+<b><u>Deployment</u></b>
+
+The site has been deployed and is available to view [here](https://next-book-please.herokuapp.com/).
 
 
 [NitinArya](https://www.pexels.com/photo/photography-of-book-page-1029141/) for the background image
