@@ -34,9 +34,9 @@
                             {% for review in reviews %}
                             {% if (book.title == review.title) and (book.author == review.author) %}
                             <div class="box">
-                                <p class="book-info"><b>Review:</b>{{ review.review }}</p>
-                                <p class="book-info"><b>Rating:</b>{{ review.rating }} out of 5</p>
-                                <p class="book-info"><b>Reviewed By:</b>{{ review.review_by | title }}</p>
+                                <p class="book-info"><b>Review:</b> {{ review.review }}</p>
+                                <p class="book-info"><b>Rating:</b> {{ review.rating }} out of 5</p>
+                                <p class="book-info"><b>Reviewed By:</b> {{ review.review_by | title }}</p>
                             </div>
                             {% endif %}
                             {% endfor %}

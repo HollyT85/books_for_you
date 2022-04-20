@@ -43,7 +43,8 @@
 .box {
     padding: 1rem;
     border: 1px solid black;
-    margin: 1px;
+    border-radius: 10px;
+    margin: 10px;
 }
 
 .searchbar {
@@ -87,6 +88,10 @@
 .book-info {
     position:relative;
     margin: 0;
+}
+
+.review-info {
+    border-radius: 10px;
 }
 
 .profile {
