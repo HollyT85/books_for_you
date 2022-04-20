@@ -106,7 +106,9 @@ Users can also return to their reviews if they pressed the wrong book.
 
 ![browsebooks](static/images/readme/goodreview.png)
 
-The browse books page again, is easily navigable with all items available on this page. As you can see, users who are not logged in cannot leave a review but can easily access the log in page, but those who are, can. There is also a pop-out helping readers understand what makes a good review. There is also a link to a generic amazon page for books; this would book hooked up to the actual book.
+![browsebooks](static/images/readme/rating.jpg)
+
+The browse books page again, is easily navigable with all items available on this page. As you can see, users who are not logged in cannot leave a review but can easily access the log in page, but those who are, can. The new rating link has a help button to show users the criteria for their rating. There is also a pop-out helping readers understand what makes a good review. There is also a link to a generic amazon page for books; this would book hooked up to the actual book.
 
 ![browsebooks](static/images/readme/viewreview.png)
 
