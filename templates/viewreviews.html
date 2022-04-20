@@ -30,7 +30,7 @@
             </div>
             <!--If user hasn't left any reviews, let them know-->
             {% else %}
-            {% if review.index == 1 %}
+            {% if loop.index == 1 %}
             <div class="bold padding">You have not left any reviews.<br>Why not leave one now?</div>
             {% endif %}
             {% endif %}
