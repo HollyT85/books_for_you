@@ -197,6 +197,8 @@ My JS code is taken from Bootstrap but it passed checks at [JSHint](https://jshi
 
 <i>HTML Validation</i>
 
+Using the [W3C](https://www.w3.org/) for HTML code validation returned various errors due to the Jinja Templating; these errors are not actual errors in the files. There were some small tweaks to be made (missed spaces between attributes and stray end tags) which have now been completed.
+
 <b><u>Deployment</u></b>
 
 The site has been deployed and is available to view [here](https://next-book-please.herokuapp.com/).

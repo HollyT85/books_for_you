@@ -13,11 +13,11 @@
             <!--Book cover / title / author displayed immediately to user-->
             <div class="card">
                 <div class="card-body">
-                    <img class="bookcover" src={{book.image}}>
+                    <img class="bookcover" alt="book cover for selected book" src={{book.image}}>
                     <p class="book-info"><b>Title:</b> {{ book.title | title }}</p><br>
                     <p class="book-info"><b>Author:</b> {{ book.author | title }}</p><br>
                     <p class="book-info"><b>Genre:</b> {{ book.genre | title }}</p><br>
-                    <a class="bold"href="https://www.amazon.co.uk/s?i=stripbooks" target="_blank">Purchase here</a>
+                    <a class="bold" href="https://www.amazon.co.uk/s?i=stripbooks" target="_blank">Purchase here</a>
                 </div>
             </div>
             <!--View Reviews which have been left-->
@@ -88,7 +88,7 @@
             {% else %}
             <div class="card">
                 <div class="card-header bold">
-                    <p class="collapsed card-link" data-toggle="collapse" href="#collapseTwo{{book._id}}">
+                    <p class="collapsed card-link" data-toggle="collapse">
                         Please <a href="{{ url_for('login') }}">Log In</a> To Leave a Review
                     </p>
                 </div>
