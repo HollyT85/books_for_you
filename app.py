@@ -178,7 +178,7 @@ def addreview():
     if request.method == "POST":
         # get review details to add to DB
         review = {
-            "author": request.form.get("author1"),
+            "author": request.form.get("author1").title(),
             "title": request.form.get("title").title(),
             "review": request.form.get("review"),
             "rating": request.form.get("rating"),
@@ -246,7 +246,7 @@ def edit(review_id):
         return redirect(url_for("viewreviews"))
 
     reviews = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
-    print(review_id)
+    
     return render_template("edit.html", review=reviews)
 
 
