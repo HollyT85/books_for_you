@@ -114,6 +114,32 @@ The browse books page again, is easily navigable with all items available on thi
 
 The view review and add review (when logged in), both collapse and un-collapse easily with a click. For the add review, the user is not required to input anything other than their review and rating and then press submit.
 
+<b><u>Log Out</u></b>
+
+![logout](static/images/readme/logout.png)
+
+When a user logs out, they are redirected to the home page where they can easily re-log back in.
+
+<b><u>Wireframes</u></b>
+
+<i>Home Page</i>
+
+My Wireframes were created on [GIMP](https://www.gimp.org/). Other than the nav bar, which needs to collapse on small screens, I wanted my design to be the same across devices.
+
+![wireframe](static/images/readme/homepage.jpg)
+
+<i>Browse Books</i>
+
+![wireframe](static/images/readme/browsebooks.jpg)
+
+<i>Profile</i>
+
+![wireframe](static/images/readme/profile.jpg)
+
+<i>My Reviews</i>
+
+![wireframe](static/images/readme/myreviews.jpg)
+
 
 
 <u><b>Next steps</b></u>
