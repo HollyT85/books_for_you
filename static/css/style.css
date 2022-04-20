@@ -89,6 +89,11 @@
     margin: 0;
 }
 
+.profile {
+    margin: 2rem;
+    width: 35rem;
+}
+
 /*text styling*/
 
 .heading {

@@ -70,6 +70,34 @@ The user profile is a simple card with the users username on. The picture is ran
 
 You can also see here, the different navbar when a user is logged in; they can easily access their profile and logout from there.
 
+<b><u>Add Book</u></b>
+
+![addbook](static/images/readme/addbook.png)
+
+![addbook](static/images/readme/bookexists.png)
+
+![addbook](static/images/readme/newbook.png)
+
+The form for adding a book is consistent with all the other forms on the site. There is a hover-over informing users how to get a URL for an image.
+
+If a book already exists in the DB, users are informed. If it doesn't, they're informed it has been added and redirected to the browse books page where their book will be at the top to easily add a review.
+
+<b><u>My Reviews</u></b>
+
+![myreviews](static/images/readme/myreviews.png)
+
+In this area, users can see a quick overview of reviews they have left; these are in collapsible formats as on the browse books page for consistency. Users can easily return to their profile if they clicked 'My Reviews' by accident. When they un-collapse a book, they can see the options to edit and delete their reviews.
+
+<b><u>Edit</u></b>
+
+![edit](static/images/readme/edit.png)
+
+When the user presses edit, they are taken to this page. The title is not-editable so it links to the DB and the book correctly. After it was tested, users asked if their initial review could be auto-filled into the review area and thus, this was implemented. 
+
+Users can also return to their reviews if they pressed the wrong book.
+
+<b><u></u></b>
+
 <u><b>Browse Books</b></u>
 
 ![browsebooks](static/images/readme/browsebooks.png)
