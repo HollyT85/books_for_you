@@ -197,5 +197,16 @@ My CSS code passed checks at [W3C](https://jigsaw.w3.org/css-validator/validator
 
 The site has been deployed and is available to view [here](https://next-book-please.herokuapp.com/).
 
+<b><u>Relational Database Model</u></b>
+
+Due to the change in criteria close to the end of the project, we have been advised to show how our site would work in a relational database model. This can be viewed below.
+
+<b><u>Issues and Bugs</u></b>
+
+<b><u>Technology, Languages and Tools</u></b>
+
+<b><u>Media</u></b>
 
 [NitinArya](https://www.pexels.com/photo/photography-of-book-page-1029141/) for the background image
+
+<b><u>Acknowledgements</u></b>
