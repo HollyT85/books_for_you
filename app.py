@@ -145,6 +145,7 @@ def addbook():
             "title": request.form.get("title").title(),
             "author": request.form.get("author").title(),
             "genre": request.form.get("genre").title(),
+            "added_by": session["user"].title(),
             "date": today
         }
 
@@ -196,6 +197,7 @@ def search():
     query = request.form.get("query")
     books = mongo.db.books.find({"$text": {"$search": query}})
     reviews = mongo.db.reviews.find()
+
     return render_template("books.html", books=books, reviews=list(reviews))
 
 
@@ -223,6 +225,17 @@ def viewreviews():
     return render_template("viewreviews.html", reviews=list(reviews))
 
 
+@app.route("/viewbooks")
+def viewbooks():
+    """
+    Allow user to see own reviews
+    """
+    # find all reviews then filtered with jinja
+    books = mongo.db.books.find()
+
+    return render_template("viewbooks.html", books=list(books))
+
+
 @app.route("/edit/<review_id>", methods=["GET", "POST"])
 def edit(review_id):
     """
@@ -244,6 +257,30 @@ def edit(review_id):
     reviews = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
 
     return render_template("edit.html", review=reviews)
+
+
+@app.route("/editbook/<book_id>", methods=["GET", "POST"])
+def editbook(book_id):
+    """
+    Allow user to edit their books
+    """
+    if request.method == "POST":
+        # allow users to update a record
+        update = {
+            "image": request.form.get("image"),
+            "title": request.form.get("title").title(),
+            "author": request.form.get("author"),
+            "genre": request.form.get("genre"),
+            "review_by": session["user"].title()
+        }
+
+        mongo.db.books.replace_one({"_id": ObjectId(book_id)}, update)
+        flash("Book Updated")
+        return redirect(url_for("viewbooks"))
+
+    books = mongo.db.books.find_one({"_id": ObjectId(book_id)})
+
+    return render_template("editbook.html", book=books)
 
 
 @app.route("/delete/<review_id>", methods=["GET", "POST"])
