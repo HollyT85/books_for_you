@@ -294,6 +294,17 @@ def delete(review_id):
     return redirect(url_for("userprofile", username=session['user']))
 
 
+@app.route("/delete/<book_id>", methods=["GET", "POST"])
+def deletebook(book_id):
+    """
+    Allow user to delete a book
+    """
+    # find review
+    mongo.db.books.delete_one({"_id": ObjectId(book_id)})
+    flash("Book removed")
+    return redirect(url_for("userprofile", username=session['user']))
+
+
 # custom error pages
 @app.errorhandler(404)
 def page_not_found(e):
