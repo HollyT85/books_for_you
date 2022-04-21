@@ -281,6 +281,8 @@ This site has been created using HTML, CSS, JS & Python.
 
 [pep8](http://pep8online.com/checkresult) to check my Python was pep8 compliant.
 
+[geeksforgeeks](https://www.geeksforgeeks.org/how-to-create-auto-resize-textarea-using-javascript-jquery/) for the code for expanding textareas.
+
 <b><u>Media</u></b>
 
 [NitinArya](https://www.pexels.com/photo/photography-of-book-page-1029141/) for the background image

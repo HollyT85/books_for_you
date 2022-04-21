@@ -27,7 +27,7 @@
                 <a href="{{ url_for('deletebook', book_id=book._id) }}" class="btn btn-dark margin"
                     type="submit">Delete</a>
             </div>
-            <!--If user hasn't left any books, let them know-->
+            <!--If user hasn't added any books, let them know-->
             {% else %}
             {% if loop.index == 1 %}
             <div class="titles text-center">You have not added any books yet.<br>Why not add one now?</div>
