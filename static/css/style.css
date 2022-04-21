@@ -41,10 +41,6 @@
     z-index: 1;
 }
 
-.padding {
-    padding: 1rem;
-}
-
 .box {
     padding: 1rem;
     border: 1px solid black;
@@ -112,6 +108,7 @@
 
 .form-label {
     font-weight: bold;
+    padding: 0.5rem;
 }
 
 .card-label {
@@ -132,23 +129,16 @@
 
 .titles {
     color: black;
-    text-align: center;
+    text-align: left;
     font-weight: bold;
+    padding:0.5rem;
 }
 
 /*Buttons and links*/
 
 .help-buttons {
     padding: 0.5rem;
-    margin: 3px;
-    font-size: 10px;
-    align-items: center;
-    align-content: center;
-}
-
-.help-buttons-add {
-    padding: 0.5rem;
-    margin: -3px 3px 3px 3px;
+    margin: 5px;
     font-size: 10px;
     align-items: center;
     align-content: center;

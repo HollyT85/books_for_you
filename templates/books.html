@@ -24,7 +24,7 @@
             <!--View Reviews which have been left-->
             <div class="card">
                 <div class="card-header">
-                    <a class="collapsed card-link bold" data-toggle="collapse" href="#collapseOne{{book._id}}">
+                    <a class="collapsed card-link titles" data-toggle="collapse" href="#collapseOne{{book._id}}">
                         See Reviews
                     </a>
                 </div>
@@ -48,7 +48,7 @@
             {% if session['user'] %}
             <div class="card">
                 <div class="card-header">
-                    <a class="collapsed card-link bold" data-toggle="collapse" href="#collapseTwo{{book._id}}">
+                    <a class="collapsed card-link titles" data-toggle="collapse" href="#collapseTwo{{book._id}}">
                         Add Review
                     </a>
                     <!--What makes a good review -->
@@ -95,7 +95,7 @@
             {% else %}
             <div class="card">
                 <div class="card-header">
-                    <p class="bold">
+                    <p class="titles">
                         Please <a href="{{ url_for('login') }}">Log In</a> To Leave a Review
                     </p>
                 </div>
