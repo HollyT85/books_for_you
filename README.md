@@ -215,13 +215,21 @@ The site has been deployed and is available to view [here](https://next-book-ple
 
 Due to the change in criteria close to the end of the project, we have been advised to show how our site would work in a relational database model. This can be viewed below.
 
+![relational](static/images/readme/relational.png)
+
+In this model, each book as a unique Book ID; this is then referenced as a foreign key in reviews to ensure that each review goes to the correct book. The Review ID is referenced in users so users can edit and delete their own reviews only and, the User ID is referenced in reviews so people can see who left what review.
+
 <b><u>Issues and Bugs</u></b>
 
-One of the bigger issues I have encountered was using the accordion system to display books, reviews and the ability to add reviews. Initially it was because I had styled all 'card' elemements the same way, once I had changed this, I couldn't get the cards to open individually; if one was clicked, they all expanded. I resolved this by adding {{ book._id }} to each accordion section so the code realised each new book was it's own individual thing.
+One of the bigger issues I have encountered was using the accordion system to display books, reviews and the ability to add reviews. Initially it was because I had styled all 'card' elemements the same way, once I had changed this, I couldn't get the cards to open individually; if one was clicked, they all expanded. I resolved this by adding {{ book._id }} to each accordion section so the code realised each new book was it's own individual item and therefore needed to act individually.
 
-When I was trying to ensure duplicate books could not be use, I had difficulty getting the coding to work as I was trying to code it the same way as checking a username; this resulted in either all books being able to added (even if they were duplicates) or no book being able to be added (even if they weren't duplicates). I realised this was not the correct way and I managed to get it funcitoning by pulling out just the author and title and then checking for those.
+When I was trying to ensure duplicate books could not be added, I had difficulty getting the coding to work as I was trying to code it the same way as checking a username; this resulted in either all books being able to added (even if they were duplicates) or no book being able to be added (even if they weren't duplicates). I realised this was not the correct way and I managed to get it functioning by pulling out just the author and title and then checking for those initially.
 
-I initially had problems with getting reviews to display for all books; they were only displaying for the first book; this was because, in the Python, the reviews were not being compiled as lists so iteration was being stopped after the first round. Once I had changed reviews to a list, this fixed the problem.
+I had some problems with getting reviews to display for all books; they were only displaying for the first book; this was because, in the Python, the reviews were not being compiled as lists so iteration was being stopped after the first round. Once I had changed reviews to a list, this fixed the problem.
+
+There was a bug where the accordion when viewing your own reviews was jumping slightly when it was expanded. I coulnd't find the problem behind it so I rewrote the code and this fixed the problem.
+
+One of the largest, repeated problems I have had has been with indenting in Python; I had to constantly check and recheck if it was correct and then change. There is still one problem with indentation which I cannot fix; I have tried everthing I can think of and, in the terminal, no matter what I have tried, it hasn't worked. I'm unsure what else to try to fix this.
 
 <b><u>Technology, Languages and Tools</u></b>
 
@@ -248,6 +256,8 @@ This site has been created using HTML, CSS, JS & Python.
 [JSHint](https://jshint.com/) to check JavaScript code.
 
 [a11y](https://color.a11y.com/Contrast/) to check accessibility of colours.
+
+[word](https://www.microsoft.com/) to create relational tables.
 
 <b><u>Media</u></b>
 
