@@ -13,7 +13,7 @@
             <!--Book cover / title / author displayed immediately to user-->
             <div class="card">
                 <div class="card-body">
-                    <img class="bookcover" alt="book cover for selected book" src={{book.image}}>
+                    <img class="bookcover" alt="book cover for selected book" src="{{ book.image }}">
                     <p class="book-info"><b>Title:</b> {{ book.title | title }}</p><br>
                     <p class="book-info"><b>Author:</b> {{ book.author | title }}</p><br>
                     <p class="book-info"><b>Genre:</b> {{ book.genre | title }}</p><br>
