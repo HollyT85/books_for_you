@@ -6,103 +6,101 @@
 
 {% for book in books %}
 
-<div id="loop">
-    <div class="row rows">
-        <div class="col-12">
-            <!--book._id to make sure each book has it's own individual section-->
-            <div id="accordion{{book._id}}">
-                <!--Book cover / title / author displayed immediately to user-->
-                <div class="card">
-                    <div class="card-body">
-                        <img class="bookcover" alt="book cover for selected book" src={{book.image}}>
-                        <p class="book-info"><b>Title:</b> {{ book.title | title }}</p><br>
-                        <p class="book-info"><b>Author:</b> {{ book.author | title }}</p><br>
-                        <p class="book-info"><b>Genre:</b> {{ book.genre | title }}</p><br>
-                        <a class="bold" href="https://www.amazon.co.uk/s?i=stripbooks" target="_blank"><i
-                                class="fa-solid fa-money-bill-1-wave"></i> Purchase here </a>
-                    </div>
+<div class="row rows">
+    <div class="col-12">
+        <!--book._id to make sure each book has it's own individual section-->
+        <div id="accordion{{book._id}}">
+            <!--Book cover / title / author displayed immediately to user-->
+            <div class="card">
+                <div class="card-body">
+                    <img class="bookcover" alt="book cover for selected book" src={{book.image}}>
+                    <p class="book-info"><b>Title:</b> {{ book.title | title }}</p><br>
+                    <p class="book-info"><b>Author:</b> {{ book.author | title }}</p><br>
+                    <p class="book-info"><b>Genre:</b> {{ book.genre | title }}</p><br>
+                    <a class="bold" href="https://www.amazon.co.uk/s?i=stripbooks" target="_blank"><i
+                            class="fa-solid fa-money-bill-1-wave"></i> Purchase here </a>
                 </div>
-                <!--View Reviews which have been left-->
-                <div class="card">
-                    <div class="card-header">
-                        <a class="collapsed card-link bold" data-toggle="collapse" href="#collapseOne{{book._id}}">
-                            See Reviews
-                        </a>
-                    </div>
-                    <div id="collapseOne{{ book._id }}" class="collapse" data-parent="#accordion{{book._id}}">
-                        <div class="card-body">
-                            <!--ensure reviews for the correct books are displayed by checking title and author-->
-                            {% for review in reviews %}
-                            {% if (book.title == review.title) and (book.author == review.author) %}
-                            <div class="box">
-                                <p class="book-info"><b>Review:</b> {{ review.review }}</p>
-                                <p class="book-info"><b>Rating:</b> {{ review.rating }} out of 5</p>
-                                <p class="book-info"><b>Reviewed By:</b> {{ review.review_by | title }}</p>
-                            </div>
-                            {% endif %}
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-
-                <!--Leave reviews if logged in-->
-                {% if session['user'] %}
-                <div class="card">
-                    <div class="card-header">
-                        <a class="collapsed card-link bold" data-toggle="collapse" href="#collapseTwo{{book._id}}">
-                            Add Review
-                        </a>
-                        <!--What makes a good review -->
-                        <a tabindex="0" class="btn btn-sm btn-dark help-buttons" role="button" data-toggle="popover"
-                            data-trigger="hover" title="What Makes a Good Review?"
-                            data-content="A review gives a quick overview of the content of the book. It also gives your opinion and whether you recommend it or not and why.">?</a>
-                    </div>
-                    <div id="collapseTwo{{ book._id }}" class="collapse" data-parent="#accordion{{book._id}}">
-                        <div class="card-body">
-                            <form method="POST" action="{{ url_for('addreview') }}">
-                                <div class="row">
-                                    <label for="review" class="form-label"><b>Review:</b></label><br>
-                                    <textarea name="review" class="form-control" id="review"
-                                        placeholder="Enter review; did you like it? Why/not? Would you recommend? Why/not?"
-                                        required></textarea><br>
-                                </div>
-                                <div class="row">
-                                    <input type="text" name="title" class="form-control" id="title"
-                                        value="{{ book.title }}" hidden> <br>
-                                </div>
-                                <div class="row">
-                                    <label for="rating" class="form-label bold">Rating</label>
-                                    <!--let users know criteria for rating-->
-                                    <a tabindex="0" class="btn btn-sm btn-dark help-buttons-add" role="button"
-                                        data-toggle="popover" data-trigger="hover" title="Rating"
-                                        data-content="Enter a number between 1 & 5 inclusive">?</a>
-                                    <input type="number" name="rating" class="form-control" id="ratinginput" min="1"
-                                        max="5" placeholder="Rating out of 5" required>
-                                </div>
-                                <div class="row">
-                                    <input type="text" name="author1" class="form-control" id="author1"
-                                        value="{{ book.author }}" hidden><br>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <button class="btn btn-dark margin-top" type="submit">Add Review</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <!--If a user isn't logged in, they're redirected to login page so they can leave a review-->
-                {% else %}
-                <div class="card">
-                    <div class="card-header bold">
-                        <p>
-                            Please <a href="{{ url_for('login') }}">Log In</a> To Leave a Review
-                        </p>
-                    </div>
-                </div>
-                {% endif %}
             </div>
+            <!--View Reviews which have been left-->
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed card-link bold" data-toggle="collapse" href="#collapseOne{{book._id}}">
+                        See Reviews
+                    </a>
+                </div>
+                <div id="collapseOne{{ book._id }}" class="collapse" data-parent="#accordion{{book._id}}">
+                    <div class="card-body">
+                        <!--ensure reviews for the correct books are displayed by checking title and author-->
+                        {% for review in reviews %}
+                        {% if (book.title == review.title) and (book.author == review.author) %}
+                        <div class="box">
+                            <p class="book-info"><b>Review:</b> {{ review.review }}</p>
+                            <p class="book-info"><b>Rating:</b> {{ review.rating }} out of 5</p>
+                            <p class="book-info"><b>Reviewed By:</b> {{ review.review_by | title }}</p>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <!--Leave reviews if logged in-->
+            {% if session['user'] %}
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed card-link bold" data-toggle="collapse" href="#collapseTwo{{book._id}}">
+                        Add Review
+                    </a>
+                    <!--What makes a good review -->
+                    <a tabindex="0" class="btn btn-sm btn-dark help-buttons" role="button" data-toggle="popover"
+                        data-trigger="hover" title="What Makes a Good Review?"
+                        data-content="A review gives a quick overview of the content of the book. It also gives your opinion and whether you recommend it or not and why.">?</a>
+                </div>
+                <div id="collapseTwo{{ book._id }}" class="collapse" data-parent="#accordion{{book._id}}">
+                    <div class="card-body">
+                        <form method="POST" action="{{ url_for('addreview') }}">
+                            <div class="row">
+                                <label for="review" class="form-label"><b>Review:</b></label><br>
+                                <textarea name="review" class="form-control" id="review"
+                                    placeholder="Enter review; did you like it? Why/not? Would you recommend? Why/not?"
+                                    required></textarea><br>
+                            </div>
+                            <div class="row">
+                                <input type="text" name="title" class="form-control" id="title" value="{{ book.title }}"
+                                    hidden> <br>
+                            </div>
+                            <div class="row">
+                                <label for="rating" class="form-label bold">Rating</label>
+                                <!--let users know criteria for rating-->
+                                <a tabindex="0" class="btn btn-sm btn-dark help-buttons-add" role="button"
+                                    data-toggle="popover" data-trigger="hover" title="Rating"
+                                    data-content="Enter a number between 1 & 5 inclusive">?</a>
+                                <input type="number" name="rating" class="form-control" id="ratinginput" min="1" max="5"
+                                    placeholder="Rating out of 5" required>
+                            </div>
+                            <div class="row">
+                                <input type="text" name="author1" class="form-control" id="author1"
+                                    value="{{ book.author }}" hidden><br>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <button class="btn btn-dark margin-top" type="submit">Add Review</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--If a user isn't logged in, they're redirected to login page so they can leave a review-->
+            {% else %}
+            <div class="card">
+                <div class="card-header bold">
+                    <p>
+                        Please <a href="{{ url_for('login') }}">Log In</a> To Leave a Review
+                    </p>
+                </div>
+            </div>
+            {% endif %}
         </div>
     </div>
 </div>
