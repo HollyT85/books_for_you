@@ -294,7 +294,7 @@ def delete(review_id):
     return redirect(url_for("userprofile", username=session['user']))
 
 
-@app.route("/delete/<book_id>", methods=["GET", "POST"])
+@app.route("/deletebook/<book_id>", methods=["GET", "POST"])
 def deletebook(book_id):
     """
     Allow user to delete a book
