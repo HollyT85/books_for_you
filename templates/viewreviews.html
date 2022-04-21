@@ -2,10 +2,10 @@
 {% block main %}
 <!--Read elemet of CRUD-->
 <!--view reviews a user has left-->
-<div class="row text-center">
-    <div class="card edit-cards col-lg-12">
+<div class="row">
+    <div class="card edit-cards col-lg-12 text-center">
         <div class="card-header">
-            <div class="titles padding">Reviews You Have Left</div>
+            <div class="titles text-center">Reviews You Have Left</div>
             <!--Allow user to return to profile if they clicked by mistake/change their mind-->
             <a class="btn btn-dark" href="{{ url_for('userprofile', username=session['user']) }}">Back to Profile</a>
         </div>
@@ -31,7 +31,7 @@
             <!--If user hasn't left any reviews, let them know-->
             {% else %}
             {% if loop.index == 1 %}
-            <div class="titles">You have not left any reviews.<br>Why not leave one now?</div>
+            <div class="titles text-center">You have not left any reviews.<br>Why not leave one now?</div>
             {% endif %}
             {% endif %}
             {% endfor %}
