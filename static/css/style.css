@@ -110,6 +110,14 @@
     font-size: 2rem;
 }
 
+.form-label {
+    font-weight: bold;
+}
+
+.card-label {
+    font-weight: bold;
+}
+
 .bold {
     font-weight: bold;
 }
@@ -125,6 +133,7 @@
 .titles {
     color: black;
     text-align: center;
+    font-weight: bold;
 }
 
 /*Buttons and links*/

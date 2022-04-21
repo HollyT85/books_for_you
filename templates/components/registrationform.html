@@ -2,7 +2,7 @@
 <form method="POST" action="{{ url_for('register') }}">
     <div class="row">
         <!--Username-->
-        <label for="username" class="form-label bold">Username</label>
+        <label for="username" class="form-label">Username</label>
         <!--Provide help to register - username requirements -->
         <a tabindex="0" class="btn btn-sm btn-dark help-buttons" role="button" data-toggle="popover"
             data-trigger="hover" title="Username Help"
@@ -12,7 +12,7 @@
     </div>
     <div class="row">
         <!--Passwords-->
-        <label for="password1" class="form-label bold">Password</label>
+        <label for="password1" class="form-label">Password</label>
         <!--Provide help to register - password requirements -->
         <a tabindex="0" class="btn btn-sm btn-dark help-buttons" role="button" data-toggle="popover"
             data-trigger="hover" title="Password Help"
@@ -20,7 +20,7 @@
         <!--Double password in case of mistypes-->
         <input type="password" name="password1" class="form-control" id="password1"
             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,}" placeholder="Enter Password" required>
-        <label for="password2" class="form-label bold">Re-Enter Password</label>
+        <label for="password2" class="form-label">Re-Enter Password</label>
         <input type="password" name="password2" class="form-control" id="password2"
             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,}" placeholder="Re-Enter Password" required>
     </div>

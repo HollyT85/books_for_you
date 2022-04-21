@@ -5,7 +5,7 @@
 <div class="row text-center">
     <div class="card edit-cards col-lg-12">
         <div class="card-header">
-            <div class="titles bold padding">Reviews You Have Left</div>
+            <div class="titles padding">Reviews You Have Left</div>
             <!--Allow user to return to profile if they clicked by mistake/change their mind-->
             <a class="btn btn-dark" href="{{ url_for('userprofile', username=session['user']) }}">Back to Profile</a>
         </div>
@@ -17,7 +17,7 @@
                 <div class="card-header" id="headingOne">
                     <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne{{ review._id }}"
                         aria-expanded="true" aria-controls="collapseOne">
-                        <div class="titles bold">{{ review.title }}</div>
+                        <div class="titles">{{ review.title }}</div>
                     </button>
                 </div>
             </div>

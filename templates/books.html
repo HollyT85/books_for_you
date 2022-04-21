@@ -70,7 +70,7 @@
                                     hidden> <br>
                             </div>
                             <div class="row">
-                                <label for="rating" class="form-label bold">Rating</label>
+                                <label for="rating" class="form-label">Rating</label>
                                 <!--let users know criteria for rating-->
                                 <a tabindex="0" class="btn btn-sm btn-dark help-buttons-add" role="button"
                                     data-toggle="popover" data-trigger="hover" title="Rating"
@@ -94,8 +94,8 @@
             <!--If a user isn't logged in, they're redirected to login page so they can leave a review-->
             {% else %}
             <div class="card">
-                <div class="card-header bold">
-                    <p>
+                <div class="card-header">
+                    <p class="bold">
                         Please <a href="{{ url_for('login') }}">Log In</a> To Leave a Review
                     </p>
                 </div>

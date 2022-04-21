@@ -6,16 +6,16 @@
     <div class="card col-12 edit-cards">
         <form method="POST" action="{{ url_for('edit', review_id=review._id) }}">
             <div class="row card-header">
-                <label for="title" class="form-label padding bold">Book Title:</label><br>
+                <label for="title" class="form-label padding">Book Title:</label><br>
                 <!-- read only so db can get info but it can't be changed-->
                 <input type="text" name="title" id="title" class="form-control" value="{{ review.title }}" readonly><br>
-                <label for="author" class="form-label padding bold">Author:</label><br>
+                <label for="author" class="form-label padding">Author:</label><br>
                 <!-- read only so db can get info but it can't be changed-->
                 <input type="text" name="author" id="author" class="form-control" value="{{ review.author }}" readonly> <br>
             </div>
             <div class="card-body">
                 <div class="row">
-                    <label for="review" class="form-label padding bold">Review:</label><br>
+                    <label for="review" class="form-label padding">Review:</label><br>
                     <!--Auto filled for user ease-->
                     <textarea name="review" class="form-control" id="review"
                         required> {{ review.review }}</textarea><br>
@@ -24,7 +24,7 @@
                     <div class="row">
                         <div class="row">
                             <!--rating auto filled from previous choice-->
-                            <label for="rating" class="form-label bold">Rating</label>
+                            <label for="rating" class="form-label">Rating</label>
                             <input type="number" name="rating" class="form-control" id="rating" min="1" max="5"
                                 value="{{ review.rating }}" required>
                         </div>
