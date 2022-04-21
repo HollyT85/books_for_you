@@ -18,12 +18,11 @@
     <!--Stylesheet-->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <title>Next Book, Please</title>
-    <!--NavBar-->
-    
-    {% include 'components/navbar.html' %}
 
 <body>
-    
+    <!--NavBar-->
+    {% include 'components/navbar.html' %}
+
     <!--Background image for all pages-->
     <img class="background" src="{{ url_for('static', filename='images/book.jpg') }}"
         alt="book with a torch light shining on it">
