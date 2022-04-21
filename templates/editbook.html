@@ -4,32 +4,19 @@
 <!--Allow users to edit books-->
 <div class="row">
     <div class="card col-12 edit-cards">
-        <form method="POST" action="{{ url_for('edit', book_id=book._id) }}">
-            <div class="row card-header">
+        <form method="POST" action="{{ url_for('editbook', book_id=book._id) }}">
+            <div class="row card-body">
+                <label for="image" class="form-label padding">Image:</label><br>
+                <input type="text" name="image" id="image" class="form-control"><br>
                 <label for="title" class="form-label padding">Book Title:</label><br>
-                <!-- read only so db can get info but it can't be changed-->
-                <input type="text" name="title" id="title" class="form-control" value="{{ book.title }}" readonly><br>
+                <input type="text" name="title" id="title" class="form-control" value="{{ book.title }}"><br>
                 <label for="author" class="form-label padding">Author:</label><br>
-                <!-- read only so db can get info but it can't be changed-->
-                <input type="text" name="author" id="author" class="form-control" value="{{ book.author }}" readonly> <br>
-            </div>
-            <div class="card-body">
-                <div class="row">
-                    <label for="review" class="form-label padding">Review:</label><br>
-                    <!--Auto filled for user ease-->
-                    <textarea name="review" class="form-control" id="review"
-                        required> {{ review.review }}</textarea><br>
+                <input type="text" name="author" id="author" class="form-control" value="{{ book.author }}"> <br>
+                <label for="genre" class="form-label padding">Genre:</label><br>
+                <input type="text" name="genre" id="genre" class="form-control" value="{{ book.genre }}"><br>
+                <input type="text" name="title" class="form-control" id="title" value="{{ book.added_by }}" hidden> <br>
                 </div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="row">
-                            <!--rating auto filled from previous choice-->
-                            <label for="rating" class="form-label">Rating</label>
-                            <input type="number" name="rating" class="form-control" id="rating" min="1" max="5"
-                                value="{{ review.rating }}" required>
-                        </div>
-                    </div>
-                </div>
+
                 <div class="row">
                     <div class="col">
                         <!--user can return to books-->

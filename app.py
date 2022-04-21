@@ -271,7 +271,7 @@ def editbook(book_id):
             "title": request.form.get("title").title(),
             "author": request.form.get("author"),
             "genre": request.form.get("genre"),
-            "review_by": session["user"].title()
+            "added_by": session["user"].title()
         }
 
         mongo.db.books.replace_one({"_id": ObjectId(book_id)}, update)
