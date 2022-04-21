@@ -11,7 +11,7 @@
                 <input type="text" name="title" class="form-control" id="id" value="{{ review.title }}" readonly> <br>
                 <label for="author" class="form-label padding bold">Author:</label><br>
                 <!-- read only so db can get info but it can't be changed-->
-                <input type="text" name="author" class="form-control" id="id" value="{{ book.author }}" readonly> <br>
+                <input type="text" name="author" class="form-control" id="id" value="{{ review.author }}" readonly> <br>
             </div>
             <div class="card-body">
                 <div class="row">
@@ -41,5 +41,5 @@
         </form>
     </div>
 </div>
-
+<script src="{{ url_for('static', filename='js/edit.js') }}"></script>
 {% endblock %}

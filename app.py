@@ -22,10 +22,6 @@ app = Flask(__name__)
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
-UPLOAD_FOLDER = "/workspace/books_for_you/static/images/uploads"
-ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
-app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
-app.config["ALLOWED_EXTENSIONS"] = ALLOWED_EXTENSIONS
 
 mongo = PyMongo(app)
 
@@ -246,7 +242,7 @@ def edit(review_id):
         return redirect(url_for("viewreviews"))
 
     reviews = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
-    
+
     return render_template("edit.html", review=reviews)
 
 

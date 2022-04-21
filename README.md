@@ -177,6 +177,12 @@ To improve the site, the links to purchase would be accurate. There would also b
 
 <b><u>Testing and Validation</u></b>
 
+<i>Pep8</i>
+
+![pep8](static/images/readme/pep.png)
+
+Due to getting some errors in the Git workspace which couldn't ever be fixed no matter what I tried, I ran my code through [pep8](http://pep8online.com/checkresult) and all the Python code is pep8 compliant.
+
 <i>Speed Test</i>
 
 ![speedtest](static/images/readme/speedtest.jpg)
@@ -258,6 +264,8 @@ This site has been created using HTML, CSS, JS & Python.
 [a11y](https://color.a11y.com/Contrast/) to check accessibility of colours.
 
 [word](https://www.microsoft.com/) to create relational tables.
+
+[pep8](http://pep8online.com/checkresult) to check my Python was pep8 compliant.
 
 <b><u>Media</u></b>
 
