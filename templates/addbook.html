@@ -5,7 +5,6 @@
     <div class="card edit-cards col-sm-6">
         <div class="card-header">
             <p class="titles"><b>Add New Book</b></p>
-            <a class="btn btn-dark" href="{{ url_for('userprofile', username=session['user']) }}">Back to Profile</a>
         </div>
         <!--Add book to mongo-->
         <div class="card-body">
@@ -36,8 +35,9 @@
                         required><br>
                 </div>
                 <div class="row">
-                    <div class="col">
+                    <div class="col card-body">
                         <button class="btn btn-dark form-button" type="submit">Add Book</button>
+                        <a class="btn btn-dark" href="{{ url_for('userprofile', username=session['user']) }}">Back to Profile</a>
                     </div>
                 </div>
             </form>
