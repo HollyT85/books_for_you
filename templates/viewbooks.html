@@ -19,13 +19,11 @@
             <div id="accordion{{ book._id }}">
                     <div class="card-header" id="headingOne{{ book._id }}">
                         <h5 class="mb-0">
-                            <a  href ="#" class="btn btn-drop" data-toggle="collapse" data-target="#collapseOne{{ book._id }}"
-                                aria-expanded="true" aria-controls="collapseOne{{ book._id }}">
+                            <a class="collapsed btn-drop" data-toggle="collapse" href="#collapseOne{{book._id}}">
                                 {{ book.title }}
                             </a>
                         </h5>
                     </div>
-
                     <div id="collapseOne{{ book._id }}" class="collapse" aria-labelledby="headingOne{{ book._id }}" data-parent="#accordion{{ book._id }}">
                         <div class="card-body">
                             <a href="{{ url_for('editbook', book_id=book._id) }}" class="btn btn-dark margin">Edit</a>
