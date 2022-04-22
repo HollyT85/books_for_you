@@ -2,6 +2,7 @@
 {% block main %}
 <!--Read elemet of CRUD-->
 <!--view reviews a user has left-->
+
 <div class="row">
     <div class="card edit-cards col-lg-12 text-center">
         <div class="card-header">
@@ -11,23 +12,25 @@
         </div>
         <div class="card-body">
             <p class="titles text-center">Don't forget to leave a review for your latest read!</p>
-            <!--Ensure only reviews by the session user are displayed-->
+            <!--Ensure only reviews added by the session user are displayed-->
             {% for review in reviews %}
             {% if review.review_by | title == session ['user']|title %}
             <div id="accordion{{ review._id }}">
-                <div class="card-header" id="headingOne">
-                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne{{ review._id }}"
-                        aria-expanded="true" aria-controls="collapseOne">
-                        <div class="titles">{{ review.title }}</div>
-                    </button>
+                    <div class="card-header" id="headingOne{{ review._id }}">
+                        <h5 class="mb-0">
+                            <a class="collapsed btn-drop" data-toggle="collapse" href="#collapseOne{{ review._id }}">
+                                {{ review.title }}
+                            </a>
+                        </h5>
+                    </div>
+                    <div id="collapseOne{{ review._id }}" class="collapse" aria-labelledby="headingOne{{ review._id }}" data-parent="#accordion{{ review._id }}">
+                        <div class="card-body">
+                            <p>{{ review.review }}</p>
+                            <a href="{{ url_for('edit', review_id=review._id) }}" class="btn btn-dark margin">Edit</a>
+                            <a href="{{ url_for('delete', review_id=review._id) }}" class="btn btn-dark margin">Delete</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div id="collapseOne{{ review._id }}" class="collapse" aria-labelledby="headingOne"
-                data-parent="#accordion{{ review._id }}">
-                <p>{{  review.review }} </p>
-                <a href="{{ url_for('edit', review_id=review._id) }}" class="btn btn-dark margin">Edit</a>
-                <a href="{{ url_for('delete', review_id=review._id) }}" class="btn btn-dark margin">Delete</a>
-            </div>
             {% endif %}
             {% endfor %}
         </div>
@@ -35,3 +38,4 @@
 </div>
 
 {% endblock %}
+
