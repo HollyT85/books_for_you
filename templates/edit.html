@@ -11,7 +11,8 @@
                 <input type="text" name="title" id="title" class="form-control" value="{{ review.title }}" readonly><br>
                 <label for="author" class="form-label padding">Author:</label><br>
                 <!-- read only so db can get info but it can't be changed-->
-                <input type="text" name="author" id="author" class="form-control" value="{{ review.author }}" readonly> <br>
+                <input type="text" name="author" id="author" class="form-control" value="{{ review.author }}" readonly>
+                <br>
             </div>
             <div class="card-body">
                 <div class="row">
@@ -41,5 +42,6 @@
         </form>
     </div>
 </div>
+<!--auto enlarge textbox-->
 <script src="{{ url_for('static', filename='js/textarea.js') }}"></script>
 {% endblock %}

@@ -16,9 +16,11 @@
                     <a tabindex="0" class="btn btn-sm btn-dark help-buttons" role="button" data-toggle="popover"
                         data-trigger="hover" title="Image Help"
                         data-content="Search for your book, right click on the book cover image and select 'copy image address' then paste below.">?</a>
+                    <!--Must be a URL for image-->
                     <input type="url" name="image" class="form-control" id="image" placeholder="Enter image URL"
                         required><br>
                 </div>
+                <!--No limits on these due to some books having several authors, some having long titles, some having extremely short titles-->
                 <div class="row">
                     <label for="title" class="form-label">Title:</label><br>
                     <input type="text" name="title" class="form-control" id="title" placeholder="Enter title"
@@ -29,6 +31,7 @@
                     <input type="text" name="author" class="form-control" id="author" placeholder="Enter author"
                         required><br>
                 </div>
+                <!--Left as typeable instead of a drop down in case of multiple genres, no limit for same reason-->
                 <div class="row">
                     <label for="genre" class="form-label">Genre:</label><br>
                     <input type="text" name="genre" class="form-control" id="genre" placeholder="Enter genre"
@@ -37,7 +40,8 @@
                 <div class="row">
                     <div class="col card-body">
                         <button class="btn btn-dark form-button" type="submit">Add Book</button>
-                        <a class="btn btn-dark form-button" href="{{ url_for('userprofile', username=session['user']) }}">Back to Profile</a>
+                        <a class="btn btn-dark form-button"
+                            href="{{ url_for('userprofile', username=session['user']) }}">Back to Profile</a>
                     </div>
                 </div>
             </form>
