@@ -49,16 +49,26 @@
     margin: 10px;
 }
 
-.searchbar, .info-card {
+.info-card {
     padding: 1rem;
     margin: 1rem auto 1rem;
     width: 80vw;
 }
 
+.searchbar{
+    display: inline-flex;
+    padding: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    align-content: center;
+}
+
+
+
 .searchbar input {
     padding: 0.5rem;
     margin: 1rem;
-    width: 10rem;
+    
 }
 
 .book-rows {
