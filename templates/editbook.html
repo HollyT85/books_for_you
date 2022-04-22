@@ -7,7 +7,7 @@
         <form method="POST" action="{{ url_for('editbook', book_id=book._id) }}">
             <div class="row card-body">
                 <label for="image" class="form-label padding">Image:</label><br>
-                <input type="text" name="image" id="image" class="form-control" value="{{ book.image }}"><br>
+                <input type="url" name="image" id="image" class="form-control" value="{{ book.image }}"><br>
                 <label for="title" class="form-label padding">Book Title:</label><br>
                 <input type="text" name="title" id="title" class="form-control" value="{{ book.title }}"><br>
                 <label for="author" class="form-label padding">Author:</label><br>
