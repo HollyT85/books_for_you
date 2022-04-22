@@ -4,6 +4,8 @@
 
 {% include 'components/searchbar.html' %}
 
+{% if books > 0 %}
+
 {% for book in books %}
 
 <div class="row book-rows">
@@ -105,5 +107,8 @@
     </div>
 </div>
 {% endfor %}
+{% else %}
+<p>No results found</p>
+{% endif %}
 <script src="{{ url_for('static', filename='js/textarea.js') }}"></script>
 {% endblock %}
