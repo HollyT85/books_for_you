@@ -53,6 +53,9 @@
     padding: 1rem;
     margin: 1rem auto 1rem;
     width: 80vw;
+    text-align: center;
+    display: flex;
+    align-items: center;
 }
 
 .searchbar input {
