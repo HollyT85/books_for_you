@@ -68,15 +68,6 @@
     width: 50%;
 }
 
-@media(max-width:640px) {
-    .searchbar input {
-        padding: 0.5rem;
-        margin: 1rem;
-        height: 2rem;
-        width: 80%;
-    }
-}
-
 .book-rows {
     padding: 2rem;
 } 
@@ -215,4 +206,22 @@ a:hover {
 /*Disable element*/
 .disable {
     pointer-events: none;
+}
+
+/*Media queries*/
+
+@media(max-width:640px) {
+    .searchbar input {
+        padding: 0.5rem;
+        margin: 1rem;
+        height: 2rem;
+        width: 80%;
+    }
+}
+
+@media(max-width:640px) {
+    .edit-cards{
+        margin: 2px;
+        max-width: 80%;
+    }
 }
