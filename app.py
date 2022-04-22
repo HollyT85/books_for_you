@@ -129,6 +129,8 @@ def addbook():
     """
     Add a book to the database
     """
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
 
     # so books can be displayed by most recent
     today = datetime.datetime.now()
@@ -162,7 +164,7 @@ def addbook():
             mongo.db.books.insert_one(book)
 
             flash("Book successfully added. Thanks!")
-            return redirect(url_for("browsebooks"))
+            return redirect(url_for("browsebooks", username=username))
 
     return render_template("addbook.html")
 
@@ -250,6 +252,8 @@ def edit(review_id):
     """
     Allow user to edit their review
     """
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
     if request.method == "POST":
         # allow users to update a record
         update = {
@@ -265,7 +269,7 @@ def edit(review_id):
 
     reviews = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
 
-    return render_template("edit.html", review=reviews)
+    return render_template("edit.html", review=reviews, username=username)
 
 
 @app.route("/editbook/<book_id>", methods=["GET", "POST"])
@@ -273,6 +277,9 @@ def editbook(book_id):
     """
     Allow user to edit their books
     """
+
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
     if request.method == "POST":
         # allow users to update a record
         update = {
@@ -289,7 +296,8 @@ def editbook(book_id):
 
     books = mongo.db.books.find_one({"_id": ObjectId(book_id)})
 
-    return render_template("editbook.html", book=books)
+    return render_template(
+        "editbook.html", book=books, username=username)
 
 
 @app.route("/delete/<review_id>", methods=["GET", "POST"])
