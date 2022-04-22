@@ -2,27 +2,27 @@
 
 <u><b>Overview</b></u>
 
-Next Book Please is aimed at the avid readers out there. It is a database where readers can find book reviews quickly and easily with minimal fuss. Users can also leave reviews to help others choose which books they would like to read next.
+Next Book, Please is aimed at the avid readers out there who are looking for a place to tell people all about their latest read. It is a database where readers can find and leave book reviews quickly and easily with minimal fuss. Users will be able to use the site to find their next book; something which can be inherently difficult to do without some words of advice!
 
-For users who are less digitally confident, there are little hints and tips along the way to make the experience smoother and, for those who are not used to leaving reviews, there are also hints on what makes a good review.
+For users who are less confident in either their technical skills or their review-leaving skills, there are little hints and tips in the most needed places to make the experience smoother and to cause as little stress as possible.
 
-It is designed as a space for anyone to use; younger and older, new reviewers and the more experienced ones and everyone in-between.
+Next Book, Please is designed as a space for anyone and everyone to use; there will be reviews from all genres of books and from many authors so there is something for everyone. It aims to be a one-stop place for the user to find their next book.
+
 
 <u><b>Site Overview & UX</b></u>
 
 ![responsive](static/images/readme/responsive.png)
 
 With the use of Bootstrap, the site is fully responsive on all platforms, as can be seen above. The nav bar collapses on small screens and the site is fully functioning and attractive on different screen sizes.
+I went for dark, neutral colours for the design as a starting point however, when my test group checked it, they felt the greys and whites worked well with the background image; as such I left it those colours as they got a positive response and work well with colour-contrast checking sites.
 
-I went for dark, neutral colours for the design as a starting point however, when my test group checked it, they felt the greys and whites worked well with the background image; as such I left it those colours as they got a positive response.
+The home screen is a simple box where users can login or register; if they wish to do neither, they can browse books via the navbar. The design is uncomplicated and easily navigable. 
 
-The home screen is a simple box where users can login or register; if they wish to do neither, they can browse books via the navbar. The design is uncomplicated and easily navigable. This page however, is not accessible via the navbar if a user is logged in as it is unnecessary for logged-in users.
+I designed the login and registration system to be as simple as possible - just a username and a double password check. When my test group came to trying it out, they were pleased; although at the time I did not have the hint buttons. These were added because of my test group; some of whom got confused regarding how to create a secure password.
 
-I designed the login and registration system to be as simple as possible; just a username and a double password check. When my test group came to trying it out they were pleased; although at the time I did not have the hint buttons; these were added as a result of my test group some of whom got confused regarding how to create a secure password without being told. 
+When it came to adding a book, for the purposes of this project, I have asked users to add a link; again, because of the test group, I have added a hint box as some users were not aware of how to do this.
 
-When it came to adding a book, for the purposes of this project, I have asked users to add a link; again, as a result of the test group, I have added a hint box as some users were not aware of how to do this.
-
-As an avid reader, I knew what I would look for in a review site however, I researched with other book readers what they would like to see. The overwhelming majority said they'd like it simple if they were adding a book with the only information being required being: image, title, author, genre. They also said they would like to see everything related to the books in one page (e.g. the book, the reviews and the ability to add a review) for ease of navigation; they did not want to have to go to many different pages to do what the site was intended; this is the reason for the layout. The only exception to this is the add book function which is only accessible from the user profile.
+As an avid reader, I knew what I would look for in a review site however, I researched with other book readers what they would like to see. The overwhelming majority said they'd like it as simple as possible if they were adding a book with the only information being required being: image, title, author, genre. They also said they would like to see everything related to the books on one page (e.g. the book, the reviews and the ability to add a review) for ease of navigation; they did not want to have to go to many different pages to do what the site was intended for; this is the reason for the layout. The only exception to this is the add book function which is only accessible from the user profile.
 
 The final design and accessibility of all features has been checked by my test group who all said it was easy to navigate and the areas where they had struggled initially, were now clearly labelled with help.
 
@@ -68,7 +68,7 @@ If the username or password are incorrect, a message is displayed; for security 
 
 ![profile](static/images/readme/userprofile.png)
 
-The user profile is a simple card with the users username on. The picture is randomly created; something the test group liked as a bit of fun. From the profile, a user can add a book, view their reviews and logout.
+The user profile is a simple card with the users username on. The picture is randomly created; something the test group liked as a bit of fun. From the profile, a user can add a book, view, edit and delete their reviews and books they have added and logout.
 
 You can also see here, the different navbar when a user is logged in; they can easily access their profile and logout from there.
 
@@ -80,9 +80,13 @@ You can also see here, the different navbar when a user is logged in; they can e
 
 ![addbook](static/images/readme/newbook.png)
 
+![addbook](static/images/readme/urlrequired.png)
+
 The form for adding a book is consistent with all the other forms on the site. There is a hover-over informing users how to get a URL for an image.
 
 If a book already exists in the DB, users are informed. If it doesn't, they're informed it has been added and redirected to the browse books page where their book will be at the top to easily add a review.
+
+For the image; if a user enters writing which is not a URL, they are informed they need to change it.
 
 <b><u>My Reviews</u></b>
 
@@ -98,9 +102,15 @@ If a user has not left any reviews yet, they are informed as such.
 
 ![edit](static/images/readme/edit.png)
 
-When the user presses edit, they are taken to this page. The title is not-editable so it links to the DB and the book correctly. After it was tested, users asked if their initial review could be auto-filled into the review area and thus, this was implemented. 
+When the user presses edit, they are taken to this page. The title and author are not-editable so it links to the DB and the book correctly. After it was tested, users asked if their initial review could be auto-filled into the review area and thus, this was implemented. 
 
 Users can also return to their reviews if they pressed the wrong book.
+
+<b><u>Edit Book</u></b>
+
+![editbook](static/images/readme/editbook.png)
+
+In the same way a user can edit their reviews, they can also edit any book they have uploaded. This is in case they accidentally mistype a name/title/genre or the image doesn't work. It has the same format as the edit review page for consistency.
 
 <b><u></u></b>
 
@@ -114,7 +124,7 @@ Users can also return to their reviews if they pressed the wrong book.
 
 ![browsebooks](static/images/readme/rating.jpg)
 
-The browse books page again, is easily navigable with all items available on this page. As you can see, users who are not logged in cannot leave a review but can easily access the log in page, but those who are, can. The new rating link has a help button to show users the criteria for their rating. There is also a pop-out helping readers understand what makes a good review. There is also a link to a generic amazon page for books; this would book hooked up to the actual book.
+The browse books page again, is easily navigable with all items available on this page. As you can see, users who are not logged in cannot leave a review but can easily access the log in page, but those who are, can. The new rating link has a help button to show users the criteria for their rating. There is also a pop-out helping readers understand what makes a good review. Alongside this, there is a link to a generic amazon page for books; this would hook up to the actual book.
 
 ![browsebooks](static/images/readme/viewreview.png)
 
@@ -132,7 +142,7 @@ When a user logs out, they are redirected to the home page where they can easily
 
 <i>Home Page</i>
 
-My Wireframes were created on [GIMP](https://www.gimp.org/). Other than the nav bar, which needs to collapse on small screens, I wanted my design to be the same across devices.
+Other than the nav bar, which needs to collapse on small screens, I wanted my design to be the same across devices.
 
 ![wireframe](static/images/readme/homepage.jpg)
 
@@ -171,17 +181,21 @@ As a reader, I'd like to have a link to where I can buy a book I am interested i
 
 ![userstory](static/images/readme/userstory5.png)
 
-<u><b>Next steps</b></u>
+<u><b>Features Left to Implement</b></u>
 
-To improve the site, the links to purchase would be accurate. There would also be pagination and a more interactive rating system.
+The site would benefit from pagination using either jQuery or Python for an improved user experience without endless scrolling.
+
+An admin page also needs to be implemented; this would be to provide the owner of the site access to usernames, books and reviews in case of any inappropriate content being added. This would mean it could be easily removed once it was spotted.
 
 <b><u>Testing and Validation</u></b>
+
+All testing was done manually
 
 <i>Pep8</i>
 
 ![pep8](static/images/readme/pep.png)
 
-Due to getting some errors in the Git workspace which couldn't ever be fixed no matter what I tried, I ran my code through [pep8](http://pep8online.com/checkresult) and all the Python code is pep8 compliant.
+Due to getting some errors in the Git workspace which couldn't be fixed no matter what I tried, I ran my code through [pep8](http://pep8online.com/checkresult) and all the Python code is pep8 compliant. Unfortunately, this means there are errors showing in my git terminal however, both my mentor and myself tried everything we could think of to stop the red error showing and nothing would.
 
 <i>Speed Test</i>
 
@@ -243,11 +257,21 @@ My JS code is taken from Bootstrap but it passed checks at [JSHint](https://jshi
 
 ![html7](static/images/readme/html7.png)
 
-Using the [W3C](https://www.w3.org/), I found a couple of small errors which have now been fixed as can be seen. The user profile page cannot be viewed due to requiring being logged in; I ran to code manually through the checker and the only errors received were about the Jinja templating. Other pages were checked before being user locked.
+Using the [W3C](https://www.w3.org/), I found a couple of small errors which have now been fixed as can be seen. The user profile page cannot be viewed due to requiring being logged in; I ran the code manually through the checker and the only errors received were about the Jinja templating. Other pages were checked before being user locked.
 
 <b><u>Deployment</u></b>
 
 The site has been deployed and is available to view [here](https://next-book-please.herokuapp.com/).
+
+If someone else were to want to deploy this site they would need to clone the repoistory and then install the correct modules from requirements.txt.
+
+They would then need to create an env.py to put into their gitignore and would need to provide the following:
+
+os.environ.setdefault("IP", "0.0.0.0")
+os.environ.setdefault("PORT", "5000")
+os.environ.setdefault("SECRET_KEY", *enter own* )
+os.environ.setdefault("MONGO_URI", *enter own*)
+os.environ.setdefault("MONGO_DBNAME", *enter own*)
 
 <b><u>Relational Database Model</u></b>
 
@@ -255,9 +279,13 @@ Due to the change in criteria close to the end of the project, we have been advi
 
 ![relational](static/images/readme/relational.png)
 
-In this model, each book as a unique Book ID; this is then referenced as a foreign key in reviews to ensure that each review goes to the correct book. The Review ID is referenced in users so users can edit and delete their own reviews only and, the User ID is referenced in reviews so people can see who left what review.
+In this model, each book has a unique Book ID; this is then referenced as a foreign key in reviews to ensure that each review goes to the correct book. The Review ID is referenced in users so users can edit and delete their own reviews only and, the User ID is referenced in reviews so people can see who left what review.
+
+Using a relational database would have made it much easier to link users, reviews and books and display if there were no matching foreign keys.
 
 <b><u>Issues and Bugs</u></b>
+
+<i>Issues</i>
 
 One of the bigger issues I have encountered was using the accordion system to display books, reviews and the ability to add reviews. Initially it was because I had styled all 'card' elemements the same way, once I had changed this, I couldn't get the cards to open individually; if one was clicked, they all expanded. I resolved this by adding {{ book._id }} to each accordion section so the code realised each new book was it's own individual item and therefore needed to act individually.
 
@@ -268,6 +296,20 @@ I had some problems with getting reviews to display for all books; they were onl
 There was a bug where the accordion when viewing your own reviews was jumping slightly when it was expanded. I coulnd't find the problem behind it so I rewrote the code and this fixed the problem.
 
 One of the largest, repeated problems I have had has been with indenting in Python; I had to constantly check and recheck if it was correct and then change. There is still one problem with indentation which I cannot fix; I have tried everthing I can think of and, in the terminal, no matter what I have tried, it hasn't worked. I'm unsure what else to try to fix this.
+
+<i>Bugs</i>
+
+Some of the cards jump ever so slightly when an action is taken.
+
+The URL link for the image is not an ideal solution and could be open to abuse however, as we have not yet been properly taught relational databases and have not been taught the correct way to upload images, my mentor advised this was the best way to do it for this project. I have ensure it has to be a URL link to try and stop any console errors.
+
+<b><u>Database Format</u></b>
+
+The structure for the website, using MongoDB is as follows:
+
+![mongo](static/images/readme/mongo.png)
+
+There is a reliance on the session cookie to filter due to the non-relational aspect of the database which made it difficult to filter out exactly what was required.
 
 <b><u>Technology, Languages and Tools</u></b>
 
