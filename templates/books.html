@@ -6,7 +6,7 @@
 
 <div class="row info-card">
     <div class="col-12 card">
-        <p class="titles text-center">Books are displayed by the most recently added.<br> Why not add a new book via your profile to help others in their search for their next book?</p>
+        <p class="titles text-center">Books are displayed by the most recent first.<br> Why not add a new book via your profile to help others in their search for their next book?</p>
     </div>
 </div>
 
@@ -36,7 +36,7 @@
                 </div>
                 <div id="collapseOne{{ book._id }}" class="collapse" data-parent="#accordion{{book._id}}">
                     <div class="card-body">
-                        <p class="titles text-center">Read this book? Why not tell us what you thought?</p>
+                        <p class="titles text-center">Read this book?<br>Why not tell us what you thought?</p>
                         <!--ensure reviews for the correct books are displayed by checking title and author-->
                         {% for review in reviews %}
                         {% if (book.title == review.title) and (book.author == review.author) %}
@@ -114,5 +114,5 @@
 
 {% endfor %}
 
-<script src="{{ url_for('static', filename='js/textarea.js') }}"></script>
+
 {% endblock %}

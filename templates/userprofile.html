@@ -12,7 +12,7 @@
             <div class="card-body">
                 <!-- auto generated profile picture-->
                 <img class="prof-pic" src="https://robohash.org/{{username}}.png" alt="robot profile picture">
-                <div>
+                <div class="profile-info">
                     <!--allow user to log out / add a book easily-->
                     <p> <b>Username:</b> {{ username | title }}</p>
                     <a href="{{ url_for('addbook') }}" class="btn btn-dark" type="submit">Add Book</a>

@@ -5,6 +5,7 @@
     <div class="card edit-cards col-sm-6">
         <div class="card-header">
             <p class="titles"><b>Add New Book</b></p>
+            <a class="btn btn-dark" href="{{ url_for('userprofile', username=session['user']) }}">Back to Profile</a>
         </div>
         <!--Add book to mongo-->
         <div class="card-body">
