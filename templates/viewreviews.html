@@ -10,6 +10,7 @@
             <a class="btn btn-dark" href="{{ url_for('userprofile', username=session['user']) }}">Back to Profile</a>
         </div>
         <div class="card-body">
+            <p class="titles text-center">Don't forget to leave a review for your latest read!</p>
             <!--Ensure only reviews by the session user are displayed-->
             {% for review in reviews %}
             {% if review.review_by | title == session ['user']|title %}
@@ -28,9 +29,6 @@
                 <a href="{{ url_for('delete', review_id=review._id) }}" class="btn btn-dark margin"
                     type="submit">Delete</a>
             </div>
-            <!--If user hasn't left any reviews, let them know-->
-            
-            
             {% endif %}
             {% endfor %}
         </div>

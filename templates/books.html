@@ -30,6 +30,7 @@
                 </div>
                 <div id="collapseOne{{ book._id }}" class="collapse" data-parent="#accordion{{book._id}}">
                     <div class="card-body">
+                        <p class="titles text-center">Read this book? Why not tell us what you thought?</p>
                         <!--ensure reviews for the correct books are displayed by checking title and author-->
                         {% for review in reviews %}
                         {% if (book.title == review.title) and (book.author == review.author) %}

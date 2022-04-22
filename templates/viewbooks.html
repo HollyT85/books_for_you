@@ -10,6 +10,7 @@
             <a class="btn btn-dark" href="{{ url_for('userprofile', username=session['user']) }}">Back to Profile</a>
         </div>
         <div class="card-body">
+            <p class="titles text-center">Don't forget to add your most recent book!<br>We'd love to know what you're reading!</p>
             <!--Ensure only books added by the session user are displayed-->
             {% for book in books %}
             {% if book.added_by | title == session ['user']|title %}
@@ -27,11 +28,7 @@
                 <a href="{{ url_for('deletebook', book_id=book._id) }}" class="btn btn-dark margin"
                     type="submit">Delete</a>
             </div>
-            <!--If user hasn't added any books, let them know-->
-            {% else %}
-            {% if loop.index == 1 %}
-            <div class="titles text-center">You have not added any books yet.<br>Why not add one now?</div>
-            {% endif %}
+            
             {% endif %}
             {% endfor %}
         </div>
