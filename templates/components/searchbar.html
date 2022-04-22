@@ -2,11 +2,11 @@
 <!--allow user to search by genre/author-->
 
 <div class="row searchbar">
-    <div class="col-12 card">
+    <div class="col-12 col-sm-8 card">
         <form method="POST" action="{{ url_for('search') }}">
             <div class="row">
                 <div class="input-field">
-                    <input type="text" name="query" minlength="3" id="query" placeholder=" search by genre/author"
+                    <input type="text" name="query" minlength="3" id="query" placeholder="genre/author"
                         required>
                 </div>
                 <div class="row">
