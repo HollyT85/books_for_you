@@ -211,21 +211,39 @@ My JS code is taken from Bootstrap but it passed checks at [JSHint](https://jshi
 
 <i>HTML Validation</i>
 
+<u>Home</u>
+
 ![html1](static/images/readme/html1.png)
+
+<u>View Reviews</u>
 
 ![html2](static/images/readme/html2.png)
 
+<u>View Books</u>
+
+![html8](static/images/readme/html8.png)
+
+<u>Edit</u>
+
 ![html3](static/images/readme/html3.png)
+
+<u>Add Book</u>
 
 ![html4](static/images/readme/html4.png)
 
+<u>Login</u>
+
 ![html5](static/images/readme/html5.png)
+
+<u>Register</u>
 
 ![html6](static/images/readme/html6.png)
 
+<u>Edit Book</u>
+
 ![html7](static/images/readme/html7.png)
 
-Using the [W3C](https://www.w3.org/), I found a couple of small errors which have now been fixed as can be seen.
+Using the [W3C](https://www.w3.org/), I found a couple of small errors which have now been fixed as can be seen. The user profile page cannot be viewed due to requiring being logged in; I ran to code manually through the checker and the only errors received were about the Jinja templating. Other pages were checked before being user locked.
 
 <b><u>Deployment</u></b>
 
