@@ -211,19 +211,19 @@ My JS code is taken from Bootstrap but it passed checks at [JSHint](https://jshi
 
 <i>HTML Validation</i>
 
-![html](static/images/readme/html1.jpg)
+![html1](static/images/readme/html1.png)
 
-![html](static/images/readme/html2.jpg)
+![html2](static/images/readme/html2.png)
 
-![html](static/images/readme/html3.jpg)
+![html3](static/images/readme/html3.png)
 
-![html](static/images/readme/html4.jpg)
+![html4](static/images/readme/html4.png)
 
-![html](static/images/readme/html5.jpg)
+![html5](static/images/readme/html5.png)
 
-![html](static/images/readme/html6.jpg)
+![html6](static/images/readme/html6.png)
 
-![html](static/images/readme/html7.jpg)
+![html7](static/images/readme/html7.png)
 
 Using the [W3C](https://www.w3.org/), I found a couple of small errors which have now been fixed as can be seen.
 
