@@ -1,5 +1,4 @@
 //auto-resize text area - Geeks for Geeks
-
 textarea = document.querySelector("#review");
         textarea.addEventListener('input', autoResize, false);
     

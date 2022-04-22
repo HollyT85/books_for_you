@@ -30,7 +30,7 @@
     float: left;
 }
 
-/*Styling Elements*/
+/*Display Elements*/
 
 .margin {
     margin-bottom: 10px;
@@ -176,11 +176,12 @@
     font-size: 1.2rem;
 }
 
-.btn-drop:hover {
-    background-color: transparent;
-    border: none;
-    color: #1655af;
+.form-button {
+    margin: 1rem 0.5rem;
+    padding: 0.5rem;
 }
+
+/*Colours and text*/
 
 a {
     text-decoration: none;
@@ -191,17 +192,18 @@ a:hover {
     color:#1655af;
 }
 
-.btn-link:hover {
-    text-decoration: black underline;
-}
-
-.form-button {
-    margin: 1rem 0.5rem;
-    padding: 0.5rem;
+.btn-drop:hover {
+    background-color: transparent;
+    border: none;
+    color: #1655af;
 }
 
 .btn:hover {
     color:#219ebc;
+}
+
+.btn-link:hover {
+    text-decoration: black underline;
 }
 
 /*Disable element*/
@@ -219,4 +221,3 @@ a:hover {
         width: 80%;
     }
 }
-
