@@ -29,10 +29,8 @@
                     type="submit">Delete</a>
             </div>
             <!--If user hasn't left any reviews, let them know-->
-            {% else %}
-            {% if loop.index == 1 %}
-            <div class="titles text-center">You have not left any reviews.<br>Why not leave one now?</div>
-            {% endif %}
+            
+            
             {% endif %}
             {% endfor %}
         </div>
