@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <!--If session user, can't click 'next book please so can't get to login form-->
+    <!--If session user, can't click 'next book please so can't get to login form without leaving and coming back-->
     {% if session.user %}
         <a class="navbar-brand text-white heading disable" href="{{ url_for('home_page') }}">Next Book, Please</a>
     {% else %}

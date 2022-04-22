@@ -5,7 +5,8 @@
     <div class="col-12 card">
         <form method="POST" action="{{ url_for('search') }}">
             <div class="input-field">
-                <input type="text" name="query" minlength="3" id="query" placeholder="genre/author" required>
+                <!--placeholder for users to know what they can search by-->
+                <input type="text" name="query" minlength="3" id="query" placeholder="search genre/author" required>
                 <button class="btn btn-dark form-button" type="submit">Search</button>
                 <a href="{{ url_for('browsebooks') }}" class="btn btn-dark form-button">Back to All
                     Books</a>
