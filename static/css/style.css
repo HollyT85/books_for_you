@@ -99,7 +99,9 @@
 }
 
 .edit-cards {
-    margin: 2rem;
+    margin: 2rem auto;
+    max-width: 80%;
+
 }
 
 .book-info {
@@ -219,9 +221,3 @@ a:hover {
     }
 }
 
-@media(max-width:640px) {
-    .edit-cards{
-        margin: 2px;
-        max-width: 80%;
-    }
-}
