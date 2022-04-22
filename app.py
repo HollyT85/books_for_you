@@ -226,7 +226,8 @@ def viewreviews():
 
     reviews = mongo.db.reviews.find()
 
-    return render_template("viewreviews.html", reviews=list(reviews))
+    return render_template(
+        "viewreviews.html", reviews=list(reviews), username=username)
 
 
 @app.route("/viewbooks")
@@ -235,9 +236,13 @@ def viewbooks():
     Allow user to see own reviews
     """
     # find all reviews then filtered with jinja
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
     books = mongo.db.books.find()
 
-    return render_template("viewbooks.html", books=list(books))
+    return render_template(
+        "viewbooks.html", books=list(books), username=username)
 
 
 @app.route("/edit/<review_id>", methods=["GET", "POST"])
