@@ -25,9 +25,8 @@
             <div id="collapseOne{{ review._id }}" class="collapse" aria-labelledby="headingOne"
                 data-parent="#accordion{{ review._id }}">
                 <p>{{  review.review }} </p>
-                <a href="{{ url_for('edit', review_id=review._id) }}" class="btn btn-dark margin" type="submit">Edit</a>
-                <a href="{{ url_for('delete', review_id=review._id) }}" class="btn btn-dark margin"
-                    type="submit">Delete</a>
+                <a href="{{ url_for('edit', review_id=review._id) }}" class="btn btn-dark margin">Edit</a>
+                <a href="{{ url_for('delete', review_id=review._id) }}" class="btn btn-dark margin">Delete</a>
             </div>
             {% endif %}
             {% endfor %}

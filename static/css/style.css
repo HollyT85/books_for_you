@@ -153,6 +153,19 @@
     align-content: center;
 }
 
+.btn-drop {
+    background-color: transparent;
+    border: none;
+    color:black;
+    font-weight: bold;
+}
+
+.btn-drop:hover {
+    background-color: transparent;
+    border: none;
+    color: #1655af;
+}
+
 a {
     text-decoration: none;
     color: black;
