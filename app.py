@@ -198,7 +198,8 @@ def search():
     books = mongo.db.books.find({"$text": {"$search": query}})
     reviews = mongo.db.reviews.find()
 
-    return render_template("books.html", books=books, reviews=list(reviews))
+    return render_template(
+        "books.html", books=books, reviews=list(reviews))
 
 
 @app.route("/books")
