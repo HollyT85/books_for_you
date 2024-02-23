@@ -1,7 +1,7 @@
 avatars==0.1.1
 click==8.0.4
 DateTime==4.4
-dnspython==2.2.1
+dnspython==1.16.0
 Flask==2.0.3
 Flask-Avatars==0.2.2
 Flask-Gravatar==0.5.0
@@ -9,7 +9,7 @@ Flask-PyMongo==2.3.0
 itsdangerous==2.1.1
 libgravatar==1.0.0
 Pillow==9.1.0
-pymongo==4.0.2
+pymongo==4.0
 pytz==2022.1
 Werkzeug==2.0.3
 zope.interface==5.4.0
